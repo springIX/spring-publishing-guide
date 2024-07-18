@@ -65,6 +65,7 @@ const RuleName = () => {
               <thead>
                 <tr className={styles.table_header}>
                   <th>구분</th>
+                  <th>태그</th>
                   <th>예약어</th>
                   <th>설명</th>
                 </tr>
@@ -72,22 +73,26 @@ const RuleName = () => {
               <tbody>
                 <tr>
                   <td>헤더</td>
-                  <td>header-</td>
+                  <td>header</td>
+                  <td>header_</td>
                   <td>헤더 영역</td>
                 </tr>
                 <tr>
                   <td>사이드</td>
-                  <td>aside-</td>
+                  <td>aside</td>
+                  <td>aside_</td>
                   <td>사이드 영역</td>
                 </tr>
                 <tr>
                   <td>메인</td>
-                  <td>main-</td>
+                  <td>main</td>
+                  <td>main_</td>
                   <td>메인 영역</td>
                 </tr>
                 <tr>
                   <td>푸터</td>
-                  <td>footer-</td>
+                  <td>footer</td>
+                  <td>footer_</td>
                   <td>푸터 영역</td>
                 </tr>
               </tbody>
@@ -99,24 +104,28 @@ const RuleName = () => {
               <thead>
                 <tr className={styles.table_header}>
                   <th>구분</th>
+                  <th>태그</th>
                   <th>예약어</th>
                   <th>설명</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>전체 영역</td>
-                  <td>-container</td>
-                  <td>컨텐츠의 전체 영역</td>
-                </tr>
-                <tr>
                   <td>바깥 영역</td>
-                  <td>-wrap</td>
+                  <td>div</td>
+                  <td>_wrap</td>
                   <td>UI 영역 단위로 그룹화</td>
                 </tr>
                 <tr>
+                  <td>전체 영역</td>
+                  <td>div</td>
+                  <td>_container</td>
+                  <td>컨텐츠의 전체 영역</td>
+                </tr>
+                <tr>
                   <td>안쪽 영역</td>
-                  <td>-inner</td>
+                  <td>section</td>
+                  <td>_inner</td>
                   <td>내부 영역</td>
                 </tr>
               </tbody>
@@ -128,6 +137,7 @@ const RuleName = () => {
               <thead>
                 <tr className={styles.table_header}>
                   <th>구분</th>
+                  <th>태그</th>
                   <th>예약어</th>
                   <th>설명</th>
                 </tr>
@@ -135,56 +145,67 @@ const RuleName = () => {
               <tbody>
                 <tr>
                   <td>머리글 영역</td>
+                  <td></td>
                   <td>-header</td>
                   <td>전체 영역의 목차 포함</td>
                 </tr>
                 <tr>
                   <td>본문 영역</td>
+                  <td></td>
                   <td>-contents</td>
                   <td>전체 영역의 본문</td>
                 </tr>
                 <tr>
                   <td>바닥글 영역</td>
+                  <td></td>
                   <td>-footer</td>
                   <td>전체 영역의 바닥글</td>
                 </tr>
                 <tr>
                   <td>제목 영역</td>
+                  <td></td>
                   <td>-title</td>
                   <td>전체 영역의 제목</td>
                 </tr>
                 <tr>
                   <td>본문 텍스트 영역</td>
+                  <td></td>
                   <td>-text</td>
                   <td>전체 영역의 본문 텍스트</td>
                 </tr>
                 <tr>
                   <td>본문 텍스트 설명 영역</td>
+                  <td></td>
                   <td>-desc</td>
                   <td>전체 영역의 본문 텍스트 설명 영역</td>
                 </tr>
                 <tr>
                   <td>네비게이션</td>
+                  <td></td>
                   <td>-nav</td>
                   <td>탐색 역할을 갖는 범위의 메뉴</td>
                 </tr>
                 <tr>
                   <td>메뉴</td>
+                  <td></td>
                   <td>-menu</td>
                   <td>탐색 역할이 없는 선택목록 메뉴</td>
                 </tr>
                 <tr>
                   <td>리스트</td>
+                  <td></td>
                   <td>-list</td>
                   <td>ul, ol에 해당하는 반복되는 목록그룹</td>
                 </tr>
                 <tr>
                   <td>항목</td>
+                  <td></td>
                   <td>-item</td>
                   <td>리스트 항목</td>
                 </tr>
                 <tr>
                   <td>링크</td>
+                  <td></td>
                   <td>-link</td>
                   <td>링크 항목</td>
                 </tr>
@@ -197,6 +218,7 @@ const RuleName = () => {
               <thead>
                 <tr className={styles.table_header}>
                   <th>구분</th>
+                  <th>태그</th>
                   <th>예약어</th>
                   <th>설명</th>
                 </tr>
@@ -204,11 +226,13 @@ const RuleName = () => {
               <tbody>
                 <tr>
                   <td>아웃라인</td>
+                  <td></td>
                   <td>-outline</td>
                   <td> </td>
                 </tr>
                 <tr>
                   <td>언더라인</td>
+                  <td></td>
                   <td>-underline</td>
                   <td> </td>
                 </tr>
