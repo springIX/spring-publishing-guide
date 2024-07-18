@@ -7,105 +7,214 @@ const RuleName = () => {
       <section className={`${styles.guide_container} spring_container`}>
         <h2 className="title">퍼블리싱 네임규칙</h2>
         <div className={styles.name_wrap}>
-          <h3 className="wrap-title">프로젝트 환경</h3>
+          <h3 className="wrap-title">표기법</h3>
           <table>
             <thead>
               <tr className={styles.table_header}>
-                <th>분류 폴더</th>
-                <th>서브 폴더</th>
-                <th>파일 이름</th>
-                <th>파일 설명</th>
+                <th>종류</th>
+                <th>구분</th>
+                <th>번호</th>
+                <th>예시</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>font</td>
-                <td>font</td>
-                <td>font.css, _font.scss</td>
-                <td>웹폰트 - 가져오기</td>
+                <td>ID Selector</td>
+                <td>카멜 표기법</td>
+                <td>한 자리수 (생략 가능, 2, 3)</td>
+                <td>errorMessage, controlCenter</td>
               </tr>
               <tr>
-                <td>CSS</td>
-                <td>styles</td>
-                <td>style.css</td>
-                <td>스타일 - 공통 영역</td>
+                <td>Class Selector</td>
+                <td>스네이크/카멜 표기법</td>
+                <td>넘버링 X</td>
+                <td>button_primary, button_outline, alL, alC, pointBl</td>
               </tr>
               <tr>
-                <td rowspan="6">SCSS</td>
-                <td rowspan="5">partials</td>
-                <td>_variable.scss</td>
-                <td>스타일 - 변수</td>
+                <td>Image</td>
+                <td>케밥 표기법</td>
+                <td>두 자리수 (01, 02, 03)</td>
+                <td>button-icon01.svg, button-icon02.svg, button-icon03.svg</td>
               </tr>
               <tr>
-                <td>_mixin.scss</td>
-                <td>스타일 - 믹스인</td>
-              </tr>
-              <tr>
-                <td>_reset.scss</td>
-                <td>스타일 - 리셋</td>
-              </tr>
-              <tr>
-                <td>_common.scss</td>
-                <td>스타일 - 공통 영역</td>
-              </tr>
-              <tr>
-                <td>_layout.scss</td>
-                <td>스타일 - 레이아웃</td>
-              </tr>
-              <tr>
-                <td>components</td>
-                <td>페이지네임.scss</td>
-                <td>스타일 - 개별 영역</td>
-              </tr>
-              <tr>
-                <td rowspan="2">SCSS</td>
-                <td></td>
-                <td>common.js</td>
-                <td>스크립트 - 공통 영역</td>
-              </tr>
-              <tr>
-                <td>components</td>
-                <td>페이지네임.js</td>
-                <td>스크립트 - 개별 영역</td>
-              </tr>
-              <tr>
-                <td rowspan="2">images</td>
-                <td>common</td>
-                <td>svg, png, jpg</td>
-                <td>공통 이미지</td>
-              </tr>
-              <tr>
-                <td>페이지명</td>
-                <td>svg, png, jpg</td>
-                <td>개별 이미지</td>
-              </tr>
-              <tr>
-                <td rowspan="2">video</td>
-                <td>common</td>
-                <td>mp4</td>
-                <td>공통 비디오</td>
-              </tr>
-              <tr>
-                <td>페이지명</td>
-                <td>mp4</td>
-                <td>개별 비디오</td>
-              </tr>
-              <tr>
-                <td rowspan="3">레이아웃</td>
-                <td rowspan="3">layout/include</td>
-                <td>_aside.html</td>
-                <td>레이아웃 - 사이드</td>
-              </tr>
-              <tr>
-                <td>_header.html</td>
-                <td>레이아웃 - 헤더</td>
-              </tr>
-              <tr>
-                <td>_footer.html</td>
-                <td>레이아웃 - 푸터</td>
+                <td>파일 및 폴더</td>
+                <td>스네이크 표기법</td>
+                <td>두 자리수 (01, 02, 03)</td>
+                <td>admin_page</td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className={styles.name_wrap}>
+          <h3 className="wrap-title">ID 선택자</h3>
+          <p className="text">ID는 개발을 위해서만 사용하고, <br/>퍼블리싱 작업시에는 앵커 및 label 등의 연결하는 상황 등을 제외하고는 일반적으로 사용하지 않으므로 정리하여 기재하지 않는다.</p>
+        </div>
+        <div className={styles.name_wrap}>
+          <h3 className="wrap-title">class 선택자</h3>
+          <div className="contents_inner">
+            <ul>
+              <li>대표하는 프로젝트명을 축약하여 프리픽스(prefix)로 사용한다.</li>
+              <li>단어의 경우 직관적으로 알아볼 수 있도록 가능한 축약하지 않는다.</li>
+              <li>체인 선택자의 개수는 3개까지 권장한다.</li>
+              <li>클래스 예약어는 상황에 맞게 선택적으로 참고한다.</li>
+            </ul>
+          </div>
+          <div className="contents_inner">
+            <h4 className="sub-title">레이아웃</h4>
+            <table>
+              <thead>
+                <tr className={styles.table_header}>
+                  <th>구분</th>
+                  <th>예약어</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>헤더</td>
+                  <td>header-</td>
+                  <td>헤더 영역</td>
+                </tr>
+                <tr>
+                  <td>사이드</td>
+                  <td>aside-</td>
+                  <td>사이드 영역</td>
+                </tr>
+                <tr>
+                  <td>메인</td>
+                  <td>main-</td>
+                  <td>메인 영역</td>
+                </tr>
+                <tr>
+                  <td>푸터</td>
+                  <td>footer-</td>
+                  <td>푸터 영역</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="contents_inner">
+            <h4 className="sub-title">영역</h4>
+            <table>
+              <thead>
+                <tr className={styles.table_header}>
+                  <th>구분</th>
+                  <th>예약어</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>전체 영역</td>
+                  <td>-container</td>
+                  <td>컨텐츠의 전체 영역</td>
+                </tr>
+                <tr>
+                  <td>바깥 영역</td>
+                  <td>-wrap</td>
+                  <td>UI 영역 단위로 그룹화</td>
+                </tr>
+                <tr>
+                  <td>안쪽 영역</td>
+                  <td>-inner</td>
+                  <td>내부 영역</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="contents_inner">
+            <h4 className="sub-title">구조</h4>
+            <table>
+              <thead>
+                <tr className={styles.table_header}>
+                  <th>구분</th>
+                  <th>예약어</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>머리글 영역</td>
+                  <td>-header</td>
+                  <td>전체 영역의 목차 포함</td>
+                </tr>
+                <tr>
+                  <td>본문 영역</td>
+                  <td>-contents</td>
+                  <td>전체 영역의 본문</td>
+                </tr>
+                <tr>
+                  <td>바닥글 영역</td>
+                  <td>-footer</td>
+                  <td>전체 영역의 바닥글</td>
+                </tr>
+                <tr>
+                  <td>제목 영역</td>
+                  <td>-title</td>
+                  <td>전체 영역의 제목</td>
+                </tr>
+                <tr>
+                  <td>본문 텍스트 영역</td>
+                  <td>-text</td>
+                  <td>전체 영역의 본문 텍스트</td>
+                </tr>
+                <tr>
+                  <td>본문 텍스트 설명 영역</td>
+                  <td>-desc</td>
+                  <td>전체 영역의 본문 텍스트 설명 영역</td>
+                </tr>
+                <tr>
+                  <td>네비게이션</td>
+                  <td>-nav</td>
+                  <td>탐색 역할을 갖는 범위의 메뉴</td>
+                </tr>
+                <tr>
+                  <td>메뉴</td>
+                  <td>-menu</td>
+                  <td>탐색 역할이 없는 선택목록 메뉴</td>
+                </tr>
+                <tr>
+                  <td>리스트</td>
+                  <td>-list</td>
+                  <td>ul, ol에 해당하는 반복되는 목록그룹</td>
+                </tr>
+                <tr>
+                  <td>항목</td>
+                  <td>-item</td>
+                  <td>리스트 항목</td>
+                </tr>
+                <tr>
+                  <td>링크</td>
+                  <td>-link</td>
+                  <td>링크 항목</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="contents_inner">
+            <h4 className="sub-title">꾸미기</h4>
+            <table>
+              <thead>
+                <tr className={styles.table_header}>
+                  <th>구분</th>
+                  <th>예약어</th>
+                  <th>설명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>아웃라인</td>
+                  <td>-outline</td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td>언더라인</td>
+                  <td>-underline</td>
+                  <td> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
     </>
