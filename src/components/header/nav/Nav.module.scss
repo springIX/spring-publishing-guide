@@ -1,0 +1,79 @@
+@import "../../../assets/scss/mixin";
+@import "../../../assets/scss/variables";
+
+.nav {
+  .nav_list {
+    display: flex;
+    flex-direction: row;
+    @include res-vw(M, gap, 20px);
+    @include screen("desktop") {
+      @include res-vw(D, gap, 30px);
+    }
+    .nav_item {
+      position: relative;
+      .nav_link {
+        a {
+          text-decoration: none;
+          color: #000;
+          display: block;
+          transition: 0.3s all ease;
+          @include res-vw(M, padding, 10px, 5px);
+          @include font-size(M, 14px);
+          @include screen("desktop") {
+            @include font-size(D, 17px);
+            @include res-vw(D, padding, 10px, 5px);
+          }
+          &:hover {
+            cursor: pointer;
+            transition: 0.3s all ease;
+          }
+        }
+      }
+      .nav_sub_list {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        z-index: 1000;
+        opacity: 0;
+        max-height: 0;
+        transition:
+          opacity 0.5s ease,
+          max-height 0.5s ease;
+        visibility: hidden;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        @include res-vw(M, border-radius, 10px);
+        @include screen("desktop") {
+          @include res-vw(D, border-radius, 10px);
+        }
+        &.show {
+          max-height: 500px;
+          opacity: 1;
+          visibility: visible;
+        }
+        .nav_sub_item {
+          white-space: nowrap;
+          padding: 10px 20px;
+          color: 000;
+          @include res-vw(M, padding, 10px, 20px);
+          @include screen("desktop") {
+            @include res-vw(D, padding, 10px, 20px);
+          }
+          .nav_sub_link {
+            a {
+              color: #000;
+              @include font-size(M, 14px);
+              @include screen("desktop") {
+                @include font-size(D, 13px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

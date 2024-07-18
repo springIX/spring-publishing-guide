@@ -1,0 +1,236 @@
+@import "/src/assets/scss/mixin";
+@import "/src/assets/scss/variables";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+:root {
+  --main-color: #717482;
+  --second-color: #767a89;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+// 각 페이지 컴포넌트를 위한 wrapper
+.page {
+  flex: 1 1 auto;
+  text-align: center;
+  @include res-vw(M, margin-top, 56px);
+  @include screen("desktop") {
+    @include res-vw(D, margin-top, 60px);
+  }
+}
+
+// page 안에 있는 wrapper
+.container {
+  margin: 0 auto;
+  @include res-vw(M, padding, 15px, 30px);
+  @include screen("desktop") {
+    @include res-vw(D, padding, 15px, 30px);
+  }
+}
+
+
+.spring_container {
+  width: 100%;
+  margin: 0 auto;
+  @include res-vw(M, margin-top, 60px);
+  @include screen("desktop") {
+    @include res-vw(D, width, 1024px);
+    @include res-vw(D, margin-top, 60px);
+  }
+  h2 {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    @include font-size(M, 30px);
+    @include screen("desktop") {
+      @include font-size(D, 40px);
+      @include res-vw(D, padding, 40px, 0);
+    }
+  }
+  > div {
+    @include res-vw(M, margin-bottom, 50px);
+    @include screen("desktop") {
+      @include res-vw(D, margin-bottom, 100px);
+    }
+    h3 {
+      @include font-size(M, 20px);
+      @include screen("desktop") {
+        @include font-size(D, 30px);
+        @include res-vw(D, margin, 20px, 0);
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+
+    th,
+    td {
+      text-align: left;
+      border: 1px solid #ddd;
+      @include res-vw(M, padding, 10px);
+      @include screen("desktop") {
+        @include res-vw(D, padding, 20px);
+      }
+      span {
+        box-shadow: inset 0px -20px 0px 0px #d0d0ff;
+      }
+    }
+
+    th {
+      background-color: #f1f1f1;
+      font-weight: bold;
+    }
+
+    .table_header {
+      background-color: #343a40;
+      color: #000;
+
+      th {
+        border-bottom: none;
+      }
+    }
+  }
+  .spring_code_inner {
+    max-width: 100%;
+    font-size: 1em;
+    line-height: 1.5;
+    tab-size: 4;
+    text-align: left;
+    border-radius: 3px;
+    width: 100%;
+    background: #2d2d2d;
+    pre {
+      border-radius: 3px;
+      box-sizing: border-box;
+      overflow-x: auto;
+      width: 100%;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      word-wrap: normal;
+      background: none;
+      color: #ccc;
+      font-family: Source Code Pro, Noto Sans KR, monospace;
+      font-size: 1em;
+      hyphens: none;
+      line-height: 1.5;
+      tab-size: 4;
+      text-align: left;
+    }
+  }
+  
+  .contents_inner {
+    margin-bottom: 50px;
+    .contents {
+      margin-bottom: 30px;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      li {
+        padding-left: 15px;
+        position: relative;
+        &:before {
+          background-color: #000;
+          border-radius: 50%;
+          content: "";
+          display: block;
+          height: 4px;
+          left: 0;
+          position: absolute;
+          top: 10px;
+          width: 4px;
+        }
+      }
+    }
+  }
+  h4 {
+    color: #555555;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+  p {
+    font-size: 1em;
+    line-height: 1.8;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: #2833e7;
+    text-decoration: underline;
+    &:hover {
+      color: #000;
+    }
+  }
+  .mu-code-label {
+    background-color: #f7f7f7;
+    border: 1px solid #333;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #333;
+    display: inline-block;
+    font-family: Source Code Pro, Noto Sans KR, monospace;
+    font-size: 14px;
+    font-style: normal;
+    margin: 1px 3px;
+    padding: 0 5px;
+  }
+  
+  .tabs {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    .tab-link {
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-right: 2px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      &.active {
+        border-bottom: 1px solid #2833e7;
+        background: #2833e7;
+        color: #fff;
+      }
+    }
+
+  }  
+  .tab {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+
+  
+}

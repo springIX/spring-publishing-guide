@@ -1,0 +1,47 @@
+@import "../../assets/scss/mixin";
+@import "../../assets/scss/variables";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #2833e7;
+  border-top: #a5a5a5 1px solid;
+  @include res-vw(M, padding, 10px, 0);
+  @include screen("desktop") {
+    @include res-vw(D, padding, 15px, 30px);
+  }
+}
+
+.footer_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  @include screen("desktop") {
+    @include res-vw(D, max-width, 1440px);
+  }
+}
+
+.footer_logo {
+  display: flex;
+  flex-direction: row;
+  img {
+    @include res-vw(M, width, 80px);
+    @include screen("desktop") {
+      @include res-vw(D, width, 100px);
+    }
+  }
+}
+
+.footer_info {
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  @include res-vw(M, gap, 10px);
+  @include font-size(M, 12px);
+  @include screen("desktop") {
+    @include font-size(D, 15px);
+    @include res-vw(D, gap, 25px);
+  }
+}

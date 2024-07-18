@@ -1,0 +1,30 @@
+@import "../../assets/scss/mixin";
+@import "../../assets/scss/variables";
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: #cccccc 1px solid;
+}
+
+.header_wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_logo {
+  display: flex;
+  flex-direction: row;
+  img {
+    @include res-vw(M, width, 80px);
+    @include screen("desktop") {
+      @include res-vw(D, width, 100px);
+    }
+  }
+}
