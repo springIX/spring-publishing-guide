@@ -326,7 +326,7 @@ const RuleCode = () => {
   return (
     <>
       <section className={`${styles.code_container} spring_container`}>
-        <h2>코드 규칙</h2>
+        <h2>퍼블리싱 코드 규칙</h2>
         <div className="tabs">
           <button
             className={`tab-link ${activeTab === "tab1" ? "active" : ""}`}

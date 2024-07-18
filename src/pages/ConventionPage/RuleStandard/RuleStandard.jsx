@@ -38,7 +38,7 @@ const RuleStandard = () => {
   return (
     <>
       <section className={`${styles.standard_container} spring_container`}>
-        <h2>프로젝트 규칙 가이드</h2>
+        <h2>표준규칙 가이드</h2>
         <div className={styles.standard_wrap}>
           <h3>head 태그 가이드</h3>
           <div className="spring_code_inner">
