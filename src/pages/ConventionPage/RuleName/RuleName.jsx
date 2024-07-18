@@ -5,9 +5,9 @@ const RuleName = () => {
   return (
     <>
       <section className={`${styles.guide_container} spring_container`}>
-        <h2>퍼블리싱 네임규칙</h2>
+        <h2 className="title">퍼블리싱 네임규칙</h2>
         <div className={styles.name_wrap}>
-          <h3>프로젝트 환경</h3>
+          <h3 className="wrap-title">프로젝트 환경</h3>
           <table>
             <thead>
               <tr className={styles.table_header}>

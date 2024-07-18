@@ -73,7 +73,7 @@ const RuleCode = () => {
     <p><strong>All recommendations</strong></p>
 
     <!-- Good -->
-    <h3>All recommendations</h3>
+    <h3 className="wrap-title">All recommendations</h3>
 
     <!-- Bad -->
     Some text
@@ -326,7 +326,7 @@ const RuleCode = () => {
   return (
     <>
       <section className={`${styles.code_container} spring_container`}>
-        <h2>퍼블리싱 코드 규칙</h2>
+        <h2 className="title">퍼블리싱 코드 규칙</h2>
         <div className="tabs">
           <button
             className={`tab-link ${activeTab === "tab1" ? "active" : ""}`}
@@ -356,9 +356,9 @@ const RuleCode = () => {
         <div className="tab-content">
           <div id="tab1" className={`tab ${activeTab === "tab1" ? "active" : ""}`}>
             <div className={styles.html_code_wrap}>
-              <h3>HTML 규칙</h3>
+              <h3 className="wrap-title">HTML 규칙</h3>
               <div className="contents_inner">
-                <h4>적절한 태그 및 속성 사용</h4>
+                <h4 className="sub-title">적절한 태그 및 속성 사용</h4>
                 <ul>
                   <li>
                     클릭했을 때 이벤트가 발생하는 경우 <code className="mu-code-label">button</code> 태그를 사용한다.
@@ -382,7 +382,7 @@ const RuleCode = () => {
                 </ul>
               </div>
               <div className="contents_inner">
-                <h4>웹접근성</h4>
+                <h4 className="sub-title">웹접근성</h4>
                 <ul>
                   <li>
                     <code className="mu-code-label">img</code> 이미지를 생성할 땐 웹 접근성, 웹 표준을 위해서 alt를 꼭 입력해줘야 하며 의미없는 이미지에 한하여 빈 값을 허용한다.
@@ -395,7 +395,7 @@ const RuleCode = () => {
                     예를 들어, 이름 입력 필드에는 title="이름"과 같이 설정하는 식이다. 
                   </li>
                   <li>
-                    적절한 태그로 작성이 어려울 경우 <a href="" target="_blank">wai-aria</a>속성을 사용한다.
+                    적절한 태그로 작성이 어려울 경우 <a className='guide_link' href="" target="_blank">wai-aria</a>속성을 사용한다.
                   </li>
                   {/* <li>
                     <code className="mu-code-label">body</code> 상단에 본문 바로가기 링크를 제공하여야 한다.
@@ -404,7 +404,7 @@ const RuleCode = () => {
                 </ul>
               </div>
               <div className="contents_inner">
-                <h4>ID와 클래스</h4>
+                <h4 className="sub-title">ID와 클래스</h4>
                 <ul>
                   <li>
                     ID는 개발을 위해서만 사용하고, 퍼블리싱 작업시에는 클래스를 활용한다.
@@ -432,9 +432,9 @@ const RuleCode = () => {
               </div>
             </div>
             <div className={styles.html_code_wrap}>
-              <h3>HTML 규칙 예시</h3>
+              <h3 className="wrap-title">HTML 규칙 예시</h3>
               <div className="contents_inner">
-                <h4>기본 스타일</h4>
+                <h4 className="sub-title">기본 스타일</h4>
                 <div className="contents">
                   <p className="text">
                     들여쓰기는 공백(space) 2문자를 사용한다.
@@ -468,7 +468,7 @@ const RuleCode = () => {
               </div>
 
               <div className="contents_inner">
-                <h4>Boolean 속성은 값을 따로 명시하지 않는다.</h4>
+                <h4 className="sub-title">Boolean 속성은 값을 따로 명시하지 않는다.</h4>
                 <div className="contents">
                   <p className="text">
                     selected, disabled, checked 등의 Boolean 속성은 값을 따로
@@ -483,7 +483,7 @@ const RuleCode = () => {
               </div>
 
               <div className="contents_inner">
-                <h4>불필요한 태그 작성을 피한다.</h4>
+                <h4 className="sub-title">불필요한 태그 작성을 피한다.</h4>
                 <div className="contents">
                   <p className="text">
                     가능하다면 불필요한 태그 작성을 피해야 한다. HTML 문서의
@@ -501,7 +501,7 @@ const RuleCode = () => {
               </div>
 
               <div className="contents_inner">
-                <h4>목적에 맞는 HTML 태그를 사용한다.</h4>
+                <h4 className="sub-title">목적에 맞는 HTML 태그를 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
                     목적에 맞는 HTML 태그를 사용한다. 예를 들어 제목을 나타낼
@@ -521,7 +521,7 @@ const RuleCode = () => {
               </div>
 
               <div className="contents_inner">
-                <h4>
+                <h4 className="sub-title">
                   CSS/자바스크립트 파일을 불러오는 경우 type을 명시하지 않는다.
                 </h4>
                 <div className="contents">
@@ -538,7 +538,7 @@ const RuleCode = () => {
                 </div>
               </div>
               <div className="contents_inner">
-                <h4>CSS는 상단, 자바스크립트는 하단에서 불러온다.</h4>
+                <h4 className="sub-title">CSS는 상단, 자바스크립트는 하단에서 불러온다.</h4>
                 <div className="contents">
                   <p className="text">
                     자바스크립트를 &lt;head&gt;에 포함할 경우, 자바스크립트
@@ -556,9 +556,9 @@ const RuleCode = () => {
           </div>
           <div id="tab2" className={`tab ${activeTab === "tab2" ? "active" : ""}`}>
             <div className={styles.css_code_wrap}>
-              <h3>CSS 규칙</h3>
+              <h3 className="wrap-title">CSS 규칙</h3>
               <div className="contents_inner">
-                <h4>선택자 및 우선순위</h4>
+                <h4 className="sub-title">선택자 및 우선순위</h4>
                 <ul className="">
                   <li>
                     공통 선택자(<code className="mu-code-label">*</code>)는 웹페이지의 성능 저하를 가져오므로 사용하지 않는다.
@@ -581,7 +581,7 @@ const RuleCode = () => {
                 </ul>
               </div>
               <div className="contents_inner">
-                <h4>주석 빈줄</h4>
+                <h4 className="sub-title">주석 빈줄</h4>
                 <ul className="">
                   <li>
                     종료 주석은 작성하지 않는다.
@@ -593,12 +593,12 @@ const RuleCode = () => {
               </div>
             </div>
             <div className={styles.css_code_wrap}>
-              <h3>CSS 규칙 예시</h3>
+              <h3 className="wrap-title">CSS 규칙 예시</h3>
               <div className="contents_inner">
-                <h4>기본 스타일</h4>
+                <h4 className="sub-title">기본 스타일</h4>
                 <div className="contents">
                   <p className="text">
-                    들여쓰기는 공백 2문자를 사용한다. 클래스, 아이디명은 카멜 케이스(camelCase), 스네이크 케이스(snake_case) 방식을 사용한다.<br />
+                    들여쓰기는 공백 2문자를 사용한다. 클래스, 아이디명은 카멜 케이스(camelCase)방식을 사용한다.<br />
                     가독성을 위해 선언 블록을 여는 중괄호(&#123;) 앞에는 공백 1문자를 공백으로 넣고 닫는 중괄호(&#125;)는 새로운 행에 배치한다.
                   </p>
                   <div className="spring_code_inner">
@@ -650,16 +650,16 @@ const RuleCode = () => {
               </div>
 
               <div className="contents_inner">
-                <h4>스타일 지정 시 아이디 대신 클래스를 사용한다.</h4>
+                <h4 className="sub-title">스타일 지정 시 아이디 대신 클래스를 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
-                    스타일 지정을 위해서는 무조건 클래스를 사용한다. 아이디를 사용한다면 재사용성 측면뿐 아니라 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">선택자 우선순위</a>가 매우 높기 때문에 예측하지 못한 동작을 야기할 수 있다. 만약 문서 내 링크 이동이나 for를 사용하는 특별한 경우에만 아이디를 사용한다.
+                    스타일 지정을 위해서는 무조건 클래스를 사용한다. 아이디를 사용한다면 재사용성 측면뿐 아니라 <a className='guide_link' href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">선택자 우선순위</a>가 매우 높기 때문에 예측하지 못한 동작을 야기할 수 있다. 만약 문서 내 링크 이동이나 for를 사용하는 특별한 경우에만 아이디를 사용한다.
                   </p>
                 </div>
               </div>
 
               <div className="contents_inner">
-                <h4>자바스크립트 Hook에서 스타일 지정을 위해 만들어진 클래스를 사용하지 않는다.</h4>
+                <h4 className="sub-title">자바스크립트 Hook에서 스타일 지정을 위해 만들어진 클래스를 사용하지 않는다.</h4>
                 <div className="contents">
                   <p className="text">
                     자바스크립트를 사용해 DOM 이벤트 핸들러를 등록할 때, 스타일 지정을 위해 사용된 클래스를 사용하지 않는다. CSS 스타일 지정과 자바스크립트 동작 제어는 서로 다른 책임을 갖기 때문에, 각각을 분리해서 관리하는 것이 유지보수 측면에서 유리하다. 이 경우 자바스크립트에서 쓸 클래스는 js-접두어를 붙이는 것을 권장한다.
@@ -673,7 +673,7 @@ const RuleCode = () => {
               </div>
 
               <div className="contents_inner">
-                <h4>숫자 0 값 이후에는 불필요한 단위를 작성하지 않는다.</h4>
+                <h4 className="sub-title">숫자 0 값 이후에는 불필요한 단위를 작성하지 않는다.</h4>
                 <div className="contents">
                   <div className="spring_code_inner">
                     <pre>
@@ -694,7 +694,7 @@ const RuleCode = () => {
               </div>
 
               <div className="contents_inner">
-                <h4>
+                <h4 className="sub-title">
                   색상 표현
                 </h4>
                 <div className="contents">
@@ -709,7 +709,7 @@ const RuleCode = () => {
                 </div>
               </div>
               <div className="contents_inner">
-                <h4>태그 선택자 대신 클래스 선택자를 사용한다.</h4>
+                <h4 className="sub-title">태그 선택자 대신 클래스 선택자를 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
                     렌더링 성능을 위해 가능한 한 태그 선택자보다 클래스 선택자를 사용한다.
@@ -732,7 +732,7 @@ const RuleCode = () => {
                 </div>
               </div>
               <div className="contents_inner">
-                <h4>가능한 한 축약형을 사용한다.</h4>
+                <h4 className="sub-title">가능한 한 축약형을 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
                     padding, margin, font, background, border, border-radius 등 축약형 사용이 가능한 프라퍼티는 가능한 한 축약형을 사용한다.
@@ -755,7 +755,7 @@ const RuleCode = () => {
                 </div>
               </div>
               <div className="contents_inner">
-                <h4>텍스트 숨김처리 시 아래 예시만 사용한다.</h4>
+                <h4 className="sub-title">텍스트 숨김처리 시 아래 예시만 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
                     숨김 텍스트 처리할 시에 text-indent: -9999px, top: -9999px, font-size: 0, display: none 등으로 처리하지 않는다. 해당 스타일은 스크린 리더기에서 읽히지 않거나, 초점 이슈가 존재할 수 있다.<br />
@@ -772,9 +772,9 @@ const RuleCode = () => {
           </div>
           <div id="tab3" className={`tab ${activeTab === "tab3" ? "active" : ""}`}>
             <div className={styles.css_code_wrap}>
-              <h3>SCSS</h3>
+              <h3 className="wrap-title">SCSS</h3>
               <div className="contents_inner">
-                <h4>SCSS 규칙</h4>
+                <h4 className="sub-title">SCSS 규칙</h4>
                 <ul>
                   <li>
                     공통 선택자(<code className="mu-code-label">*</code>)는 웹페이지의 성능 저하를 가져오므로 사용하지 않는다.
@@ -798,9 +798,9 @@ const RuleCode = () => {
               </div>
             </div>
             <div className={styles.css_code_wrap}>
-              <h3>SCSS 규칙 예시</h3>
+              <h3 className="wrap-title">SCSS 규칙 예시</h3>
               <div className="contents_inner">
-                <h4>파일 구조</h4>
+                <h4 className="sub-title">파일 구조</h4>
                 <div className="contents">
                   <p className="text">
                     파일 구조는 가능하다면 컴포넌트 형식으로 파일을 나누어 작업한다.<br />
@@ -814,7 +814,7 @@ const RuleCode = () => {
                 </div>
               </div>
               <div className="contents_inner">
-                <h4>변수명은 케밥 케이스를 사용한다.</h4>
+                <h4 className="sub-title">변수명은 케밥 케이스를 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
                     변수명은 카멜 케이스(camelCase), 스네이크 케이스(snakecase) 방식보다 -를 사용하는 케밥 케이스(kebab-case)를 사용한다. 해당 파일에서만 쓰이는 경우 변수에 underscore(``)를 추가해서 사용할 수 있다.

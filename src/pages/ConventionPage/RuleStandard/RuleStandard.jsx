@@ -38,9 +38,9 @@ const RuleStandard = () => {
   return (
     <>
       <section className={`${styles.standard_container} spring_container`}>
-        <h2>표준규칙 가이드</h2>
+        <h2 className="title">표준규칙 가이드</h2>
         <div className={styles.standard_wrap}>
-          <h3>head 태그 가이드</h3>
+          <h3 className="wrap-title">head 태그 가이드</h3>
           <div className="spring_code_inner">
             <pre>
               <code>{codeString}</code>
@@ -48,7 +48,7 @@ const RuleStandard = () => {
           </div>
         </div>
         <div className={styles.semantic_wrap}>
-          <h3>Semantic Markup</h3>
+          <h3 className="wrap-title">Semantic Markup</h3>
           <div className={styles.semantic_table_inner}>
             <table>
               <thead>
@@ -207,13 +207,13 @@ const RuleStandard = () => {
           </div>
           <div className="contents_inner">
             <div className="contents">
-              <h4>시맨틱 태그의 이점</h4>
+              <h4 className="sub-title">시맨틱 태그의 이점</h4>
               <p className="text">
                 시맨틱 태그를 사용함에 따라 오는 이점에는 크게 세 가지가 존재합니다. 이 세 가지는 모두 인터넷 전반에 걸쳐 웹사이트의 일관성을 향상시키는 것과 관련이 있습니다. Non-Semantic HTML 태그는 더 모호하며 해석하는 데 더 많은 리소스가 필요합니다. 개발자가 의미론적으로 작성할 때 브라우저가 식별할 수 있는 요소에 대해 표준화된 이름을 사용하므로 인터넷에서 HTML의 상호 운용성이 향상됩니다.
               </p>
             </div>
             <div className="contents">
-              <h4>1. 접근성 향상</h4>
+              <h4 className="sub-title">1. 접근성 향상</h4>
               <p className="text">
                 시맨틱 태그를 사용하면 페이지의 접근성이 향상됩니다. HTML 시맨틱 태그 요소는 사람들이 웹페이지를 탐색하고 페이지와 상호 작용하는 데 도움이 되는 화면 판독기, 키보드 또는 음성 명령과 같은 보조 기술에 대한 유용한 정보와 단서를 제공할 수 있습니다. 예를 들어, <span>&lt;nav&gt;</span>의 경우, 콘텐츠에 탐색 링크가 포함되어 있음을 나타낼 수 있고, <span>&lt;article&gt;</span>의 경우에는 독립형 콘텐츠가 포함되어 있음을 나타낼 수 있습니다.
               </p>
@@ -222,7 +222,7 @@ const RuleStandard = () => {
               </p>
             </div>
             <div className="contents">
-              <h4>2. SEO (검색엔진최적화) 향상</h4>
+              <h4 className="sub-title">2. SEO (검색엔진최적화) 향상</h4>
               <p className="text">
                 SEO (검색엔진최적화)는 Google과 같은 검색엔진 상에서 웹사이트 순위에 영향을 미칩니다. 시맨틱 태그를 사용하면 검색엔진과 사용자에게 웹페이지가 더 눈에 띄고 매력적으로 보이게 만들 수 있습니다.
               </p>
@@ -234,7 +234,7 @@ const RuleStandard = () => {
               </p>
             </div>
             <div className="contents">
-              <h4>3. 가독성 향상</h4>
+              <h4 className="sub-title">3. 가독성 향상</h4>
               <p className="text">
                 시맨틱 태그를 사용하면 웹페이지의 가독성 또한 향상됩니다. 즉, 사람들이 콘텐츠를 더 쉽고 빠르게 이해하고 소비할 수 있게 됩니다. 시맨틱 태그는 콘텐츠의 명확하고 일관된 흐름과 구조를 만드는데 도움이 됩니다.
               </p>
@@ -248,7 +248,7 @@ const RuleStandard = () => {
           </div>
         </div>
         {/* <div className={styles.entity_wrap}>
-          <h3>특수기호 Entity name</h3>
+          <h3 className="wrap-title">특수기호 Entity name</h3>
           <div className="desc">
               <pc className="text">
                 특수기호는 <a href="https://symbl.cc/kr/html-entities/" target="_blank">Entity name</a>을 사용하여 entity 코드로 변환한다.

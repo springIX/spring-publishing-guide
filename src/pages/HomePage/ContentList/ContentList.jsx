@@ -5,7 +5,7 @@ const ContentList = () => {
   return (
     <>
       <main className={styles.home_container}>
-        <h2>Spring 퍼블리싱 가이드</h2>
+        <h2 className="title">Spring 퍼블리싱 가이드</h2>
       </main>
     </>
   );

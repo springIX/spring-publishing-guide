@@ -59,7 +59,7 @@ li {
     @include res-vw(D, width, 1024px);
     @include res-vw(D, margin-top, 60px);
   }
-  h2 {
+  .title {
     width: 100%;
     border-bottom: 1px solid #ccc;
     @include font-size(M, 30px);
@@ -73,7 +73,7 @@ li {
     @include screen("desktop") {
       @include res-vw(D, margin-bottom, 100px);
     }
-    h3 {
+    .wrap-title {
       @include font-size(M, 20px);
       @include screen("desktop") {
         @include font-size(D, 30px);
@@ -170,7 +170,7 @@ li {
       }
     }
   }
-  h4 {
+  .sub-title {
     color: #555555;
     font-size: 20px;
     font-weight: 700;
@@ -178,14 +178,14 @@ li {
     margin-bottom: 10px;
     padding: 0;
   }
-  p {
+  .text {
     font-size: 1em;
     line-height: 1.8;
     font-weight: 400;
     margin: 0;
     padding: 0;
   }
-  a {
+  .guide_link {
     color: #2833e7;
     text-decoration: underline;
     &:hover {
