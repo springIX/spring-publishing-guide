@@ -138,7 +138,7 @@ const RuleCode = () => {
     ...}
 
     /* Good */
-    .first-selector {}
+    .first_selector {}
     #button-id {
       ...
     }
@@ -171,7 +171,6 @@ const RuleCode = () => {
       margin: 15px;
     }
   `;
-  
   const cssCode4 = `
     /* Bad */
     .selector {
@@ -204,10 +203,10 @@ const RuleCode = () => {
   `;
   const cssCode7 = `
     /* Bad */
-    .no-border {border: none;}
+    .no_border {border: none;}
 
     /* Good */
-    .no-border {border: 0;}
+    .no_border {border: 0;}
   `;
   const cssCode8 = `
     /* Bad */
@@ -255,10 +254,9 @@ const RuleCode = () => {
       background-color: #c83636;
       background-image: url("back.jpg");
   `;
-  
   const cssCode13 = `
     /* 1 */
-    .sr-only {
+    .sr_only {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -271,7 +269,7 @@ const RuleCode = () => {
     }
 
     /* 2 */
-    .hidden-visually {
+    .hidden_visually {
       border: 0;
       clip: rect(0 0 0 0);
       height: 1px;
@@ -280,6 +278,19 @@ const RuleCode = () => {
       padding: 0;
       position: absolute;
       width: 1px;
+    }
+  `;
+  const cssCode14 = `
+    /* Bad */
+    .selector, .selector-secondary, .selector[type=text] {
+      ...
+    }
+
+    /* Good */
+    .selector,
+    .selector-secondary,
+    .selector[type="text"] {
+      ...
     }
   `;
   const scssCode1 = `
@@ -374,7 +385,7 @@ const RuleCode = () => {
                 <h4>웹접근성</h4>
                 <ul>
                   <li>
-                    <code className="mu-code-label">img</code> 이미지를 생성할 땐 웹 접근성, 웹 표준을 위해서 alt를 꼭 입력해줘야 한며 의미없는 이미지에 한하여 빈 값을 허용한다.
+                    <code className="mu-code-label">img</code> 이미지를 생성할 땐 웹 접근성, 웹 표준을 위해서 alt를 꼭 입력해줘야 하며 의미없는 이미지에 한하여 빈 값을 허용한다.
                   </li>
                   <li>
                     <code className="mu-code-label">input</code> 요소에 <code className="mu-code-label">id</code>속성을 설정하고 <code className="mu-code-label">label</code>요소의 <code className="mu-code-label">for</code> 속성으로 연결하고 <code className="mu-code-label">title</code> 값을 지정하여야 한다.
@@ -587,7 +598,8 @@ const RuleCode = () => {
                 <h4>기본 스타일</h4>
                 <div className="contents">
                   <p className="text">
-                    들여쓰기는 공백 2문자를 사용한다. 클래스, 아이디명은 카멜 케이스(camelCase), 스네이크 케이스(snake_case) 방식보다 -를 사용하는 케밥 케이스(kebab-case)를 사용한다. 가독성을 위해 선언 블록을 여는 중괄호(&#123;) 앞에는 공백 1문자를 공백으로 넣고 닫는 중괄호(&#125;)는 새로운 행에 배치한다.
+                    들여쓰기는 공백 2문자를 사용한다. 클래스, 아이디명은 카멜 케이스(camelCase), 스네이크 케이스(snake_case) 방식을 사용한다.<br />
+                    가독성을 위해 선언 블록을 여는 중괄호(&#123;) 앞에는 공백 1문자를 공백으로 넣고 닫는 중괄호(&#125;)는 새로운 행에 배치한다.
                   </p>
                   <div className="spring_code_inner">
                     <pre>
@@ -621,7 +633,7 @@ const RuleCode = () => {
                   </p>
                   <div className="spring_code_inner">
                     <pre>
-                      <code>{cssCode3}</code>
+                      <code>{cssCode14}</code>
                     </pre>
                   </div>
                 </div>

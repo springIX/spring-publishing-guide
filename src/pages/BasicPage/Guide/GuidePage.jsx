@@ -28,7 +28,7 @@ const GuidePage = () => {
               </tr>
               <tr>
                 <th>해상도 기준 / 디자인 너비</th>
-                <td>pc : 1920px / 1920px | mo : 768 / 360</td>
+                <td>pc : 1920px / 1920px | mo : 750 / 375</td>
               </tr>
             </tbody>
           </table>
@@ -53,12 +53,11 @@ const GuidePage = () => {
               </tr>
               <tr>
                 <td rowspan="2">CSS</td>
-                <td>styles</td>
+                <td rowspan="2">styles</td>
                 <td>style.css</td>
                 <td>스타일 - 공통 영역</td>
               </tr>
               <tr>
-                <td>styles</td>
                 <td>페이지네임.css</td>
                 <td>스타일 - 개별 영역</td>
               </tr>
@@ -112,6 +111,17 @@ const GuidePage = () => {
                 <td>개별 이미지</td>
               </tr>
               <tr>
+                <td rowspan="2">video</td>
+                <td>common</td>
+                <td>mp4</td>
+                <td>공통 비디오</td>
+              </tr>
+              <tr>
+                <td>페이지명</td>
+                <td>mp4</td>
+                <td>개별 비디오</td>
+              </tr>
+              <tr>
                 <td rowspan="3">레이아웃</td>
                 <td rowspan="3">layout/include</td>
                 <td>_aside.html</td>
@@ -127,6 +137,10 @@ const GuidePage = () => {
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className={styles.page_layout_wrap}>
+          <h3>Page Layout</h3>
+          
         </div>
       </section>
     </>

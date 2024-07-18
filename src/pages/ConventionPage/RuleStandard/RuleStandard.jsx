@@ -30,7 +30,6 @@ const RuleStandard = () => {
             <link rel="icon" type="image/png" href="<?=$aPath?>/assets/images/favicons/16x16.png" sizes="16x16">
             <link rel="shortcut icon" href="<?=$aPath?>/favicon.ico">
             <link rel="stylesheet" type="text/css" href="">
-            <script src=""></script>
         </head>
         <body>
         </body>

@@ -8,11 +8,11 @@ const Header = () => {
     <header className={styles.header}>
       <nav className='container'>
         <div className={styles.header_wrapper}>
-          <div className={styles.header_logo}>
+          <h1 className={styles.header_logo}>
             <Link to='/'>
                 <img src='https://www.outspring.co.kr/wp-content/uploads/2022/10/logo-1.png' alt='logo' />
             </Link>
-          </div>
+          </h1>
           <Nav />
         </div>
       </nav>
