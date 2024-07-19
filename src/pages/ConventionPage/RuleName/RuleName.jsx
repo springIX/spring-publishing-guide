@@ -4,10 +4,10 @@ import styles from './RuleName.module.scss'
 const RuleName = () => {
   return (
     <>
-      <div className={`${styles.guide_container} spring_container`}>
+      <section className={`${styles.guide_container} spring_container`}>
         <h2 className="title">퍼블리싱 네임규칙</h2>
-        <section className={styles.name_inner}>
-          <h3 className="guide-title">표기법</h3>
+        <div className={styles.name_wrap}>
+          <h3 className="wrap-title">표기법</h3>
           <table>
             <thead>
               <tr className={styles.table_header}>
@@ -44,13 +44,13 @@ const RuleName = () => {
               </tr>
             </tbody>
           </table>
-        </section>
-        <section className={styles.name_inner}>
-          <h3 className="guide-title">ID 선택자</h3>
+        </div>
+        <div className={styles.name_wrap}>
+          <h3 className="wrap-title">ID 선택자</h3>
           <p className="text">ID는 개발을 위해서만 사용하고, <br/>퍼블리싱 작업시에는 앵커 및 label 등의 연결하는 상황 등을 제외하고는 일반적으로 사용하지 않으므로 정리하여 기재하지 않는다.</p>
-        </section>
-        <section className={styles.name_inner}>
-          <h3 className="guide-title">class 선택자</h3>
+        </div>
+        <div className={styles.name_wrap}>
+          <h3 className="wrap-title">class 선택자</h3>
           <div className="contents_inner">
             <ul>
               <li>대표하는 프로젝트명을 축약하여 프리픽스(prefix)로 사용한다.</li>
@@ -145,102 +145,75 @@ const RuleName = () => {
               <tbody>
                 <tr>
                   <td>머리글 영역</td>
-                  <td></td>
-                  <td>-header</td>
+                  <td>div</td>
+                  <td>_header</td>
                   <td>전체 영역의 목차 포함</td>
                 </tr>
                 <tr>
                   <td>본문 영역</td>
-                  <td></td>
-                  <td>-contents</td>
+                  <td>div</td>
+                  <td>_contents</td>
                   <td>전체 영역의 본문</td>
                 </tr>
                 <tr>
                   <td>바닥글 영역</td>
-                  <td></td>
-                  <td>-footer</td>
+                  <td>div</td>
+                  <td>_footer</td>
                   <td>전체 영역의 바닥글</td>
                 </tr>
                 <tr>
                   <td>제목 영역</td>
-                  <td></td>
-                  <td>-title</td>
+                  <td>h1 &middot;&middot;&middot;</td>
+                  <td>_title</td>
                   <td>전체 영역의 제목</td>
                 </tr>
                 <tr>
                   <td>본문 텍스트 영역</td>
-                  <td></td>
-                  <td>-text</td>
+                  <td>p</td>
+                  <td>_text</td>
                   <td>전체 영역의 본문 텍스트</td>
                 </tr>
                 <tr>
                   <td>본문 텍스트 설명 영역</td>
-                  <td></td>
-                  <td>-desc</td>
+                  <td>span</td>
+                  <td>_desc</td>
                   <td>전체 영역의 본문 텍스트 설명 영역</td>
                 </tr>
                 <tr>
-                  <td>네비게이션</td>
-                  <td></td>
-                  <td>-nav</td>
-                  <td>탐색 역할을 갖는 범위의 메뉴</td>
-                </tr>
-                <tr>
                   <td>메뉴</td>
-                  <td></td>
-                  <td>-menu</td>
+                  <td>div</td>
+                  <td>_menu</td>
                   <td>탐색 역할이 없는 선택목록 메뉴</td>
                 </tr>
                 <tr>
                   <td>리스트</td>
-                  <td></td>
-                  <td>-list</td>
+                  <td>ul</td>
+                  <td>_list</td>
                   <td>ul, ol에 해당하는 반복되는 목록그룹</td>
                 </tr>
                 <tr>
                   <td>항목</td>
-                  <td></td>
-                  <td>-item</td>
+                  <td>li</td>
+                  <td>_item</td>
                   <td>리스트 항목</td>
                 </tr>
                 <tr>
                   <td>링크</td>
-                  <td></td>
-                  <td>-link</td>
+                  <td>a</td>
+                  <td>_link</td>
                   <td>링크 항목</td>
                 </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="contents_inner">
-            <h4 className="sub-title">꾸미기</h4>
-            <table>
-              <thead>
-                <tr className={styles.table_header}>
-                  <th>구분</th>
-                  <th>태그</th>
-                  <th>예약어</th>
-                  <th>설명</th>
-                </tr>
-              </thead>
-              <tbody>
                 <tr>
-                  <td>아웃라인</td>
-                  <td></td>
-                  <td>-outline</td>
-                  <td> </td>
-                </tr>
-                <tr>
-                  <td>언더라인</td>
-                  <td></td>
-                  <td>-underline</td>
-                  <td> </td>
+                  <td>버튼</td>
+                  <td>button</td>
+                  <td>_btn</td>
+                  <td>버튼 항목</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </>
   )
 }
