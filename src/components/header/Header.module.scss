@@ -21,6 +21,7 @@
 .header_logo {
   display: flex;
   flex-direction: row;
+  margin: 0;
   img {
     @include res-vw(M, width, 80px);
     @include screen("desktop") {

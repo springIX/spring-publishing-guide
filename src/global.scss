@@ -73,46 +73,46 @@ li {
     @include screen("desktop") {
       @include res-vw(D, margin-bottom, 100px);
     }
-    .guide-title {
-      @include font-size(M, 20px);
-      @include screen("desktop") {
-        @include font-size(D, 30px);
-        @include res-vw(D, margin, 20px, 0);
-      }
+  }
+  .guide-title {
+    @include font-size(M, 20px);
+    @include screen("desktop") {
+      @include font-size(D, 30px);
+      @include res-vw(D, margin, 20px, 0);
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-    }
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
 
-    th,
-    td {
-      text-align: left;
-      border: 1px solid #ddd;
-      @include res-vw(M, padding, 10px);
-      @include screen("desktop") {
-        @include res-vw(D, padding, 20px);
-      }
-      span {
-        box-shadow: inset 0px -20px 0px 0px #d0d0ff;
-      }
+  th,
+  td {
+    text-align: left;
+    border: 1px solid #ddd;
+    @include res-vw(M, padding, 10px);
+    @include screen("desktop") {
+      @include res-vw(D, padding, 20px);
     }
+    span {
+      box-shadow: inset 0px -20px 0px 0px #d0d0ff;
+    }
+  }
+
+  th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+  }
+
+  .table_header {
+    background-color: #343a40;
+    color: #000;
 
     th {
-      background-color: #f1f1f1;
-      font-weight: bold;
-    }
-
-    .table_header {
-      background-color: #343a40;
-      color: #000;
-
-      th {
-        border-bottom: none;
-      }
+      border-bottom: none;
     }
   }
   .spring_code_inner {
@@ -148,6 +148,9 @@ li {
     margin-bottom: 50px;
     .contents {
       margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     ul {
       display: flex;

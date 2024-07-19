@@ -28,7 +28,7 @@ const RuleName = () => {
                 <td>Class Selector</td>
                 <td>스네이크/카멜 표기법</td>
                 <td>넘버링 X</td>
-                <td>button_primary, button_outline, alL, alC, pointBl</td>
+                <td>button_primary, button_outline, alL, pointBl</td>
               </tr>
               <tr>
                 <td>SCSS 변수명</td>
@@ -37,10 +37,28 @@ const RuleName = () => {
                 <td>$main-color: blue;</td>
               </tr>
               <tr>
+                <td>JS 생성자</td>
+                <td>파스칼 표기법</td>
+                <td>넘버링 X</td>
+                <td>class ConstructorName {}</td>
+              </tr>
+              <tr>
+                <td>JS 상수</td>
+                <td>영문 대문자 스네이크 표기법</td>
+                <td>넘버링 X</td>
+                <td>SYMBOLIC_CONSTANTS;</td>
+              </tr>
+              <tr>
+                <td>JS 변수, 함수</td>
+                <td>카멜 표기법</td>
+                <td>넘버링 X</td>
+                <td>const onClick = () =&gt; {}; , const dogs = [];</td>
+              </tr>
+              <tr>
                 <td>Image</td>
                 <td>케밥 표기법</td>
                 <td>두 자리수 (01, 02, 03)</td>
-                <td>button-icon01.svg, button-icon02.svg, button-icon03.svg</td>
+                <td>button-icon01.svg, button-icon02.svg</td>
               </tr>
               <tr>
                 <td>파일 및 폴더</td>

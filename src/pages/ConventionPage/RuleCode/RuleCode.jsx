@@ -322,6 +322,190 @@ const RuleCode = () => {
     /* Good */
     $main-color: blue;
   `;
+  const scssCode3 = `
+    @mixin button($color) {
+      background-color: $color;
+      border-radius: 5px;
+      padding: .25em .5em;
+      &:hover {
+        cursor: pointer;
+      background-color: $color;
+      border-color: $color;
+      }
+    }
+    .button-a {
+      @include button(#b4d455);
+    }
+    .button-b {
+      @include button(#c0ffee);
+    }
+  `;
+  const scssCode4 = `
+    .button-a {
+      background-color: #b4d455;
+      border-radius: 5px;
+      padding: .25em .5em;
+    }
+    .button-a:hover {
+      cursor: pointer;
+      background-color: #b4d455;
+      border-color: #b4d455;
+    }
+
+    .button-b {
+      background-color: #c0ffee;
+      border-radius: 5px;
+      padding: .25em .5em;
+    }
+    .button-b:hover {
+      cursor: pointer;
+      background-color: #c0ffee;
+      border-color: #c0ffee;
+    }
+  `;
+  const scssCode5 = `
+    // base.scss
+    %message {
+      border: 1px solid #ccc;
+      padding: 10px;
+      color: #333;
+    }
+
+    .success {
+      @extend %message;
+      border-color: green;
+    }
+
+    .error {
+      @extend %message;
+      border-color: red;
+    }
+
+    // output.css
+    .success, .error {
+      border: 1px solid #ccc;
+      padding: 10px;
+      color: #333;
+    }
+
+    .success {
+      border-color: green;
+    }
+
+    .error {
+      border-color: red;
+    }
+  `;
+  const scssCode6 = `
+    .wrapper {
+      .container {
+        .content {
+          .inner {
+            ...
+          }
+        }
+      }
+    }
+  `;
+  const jsCode1 = `
+    // Bad
+    function sum(x, y) {
+      result = x + y;
+      return result;
+    }
+
+    // Bad
+    function foo() {
+      let a = b = 0; // let a = (b = 0);와 같다. b가 암묵적 전역이 된다.
+    }
+    // Good
+    function sum(x, y) {
+      let result = x + y;
+      return result;
+    }
+
+    // Good
+    function foo() {
+      let a, b;
+      a = b = 0;
+    }
+  `;
+  const jsCode2 = `
+    // Bad - 블록 스코프 밖에서 변수 선언
+    function foo() {
+      const len = this._array.length;
+      let i = 0;
+      let j = 0;
+      let len2, item;
+
+      for (; i < len; i += 1) {
+          ...
+      }
+      
+      len2 = this._array2.length;
+      for (j = 0, len2 = this._array2.length; j < len2; j += 1) {
+          item = this._array2[j];
+          ...
+      }
+    }
+
+    // Good 
+    function foo() {
+      const len = this._array.length;
+      for (let i = 0; i < len; i += 1) {
+          ...
+      }
+
+      // 사용 시점에 선언 및 할당
+      const len2 = this._array2.length;
+      for (let j = 0; j < len2; j += 1) {
+          const item = this._array2[j];
+          ...
+      }
+    }
+  `;
+  const jsCode3 = `
+    const lodash = require('lodash');
+    const $ = require(jquery);
+    const handlebars = require('handlebars');
+    const d3 = require('d3');
+
+    const pluginFactory from '../../factories/pluginFactory';
+    const predicate from '../../helpers/predicate';
+    const raphaelRenderUtil from '../../plugins/raphaelRenderUtil';
+  `;
+  const jsCode4 = `
+    const len = items.length;
+    let i;
+
+    // Bad
+    for (i = 0; i < len; i++) {
+      itemsCopy[i] = items[i];
+    }
+
+    // Good
+    const itemsCopy = [...items];
+  `;
+  const jsCode5 = `
+    // Bad
+    const d = [1,
+      2, 3];
+    const e = [
+      function foo() {
+        dosomething();
+      }, function bar() {
+        dosomething();
+      }
+    ];
+
+    // Good
+    const a = [1, 2, 3];
+    const b = [
+      1, 
+      2, 
+      3
+    ];
+  `;
   
   return (
     <>
@@ -764,32 +948,6 @@ const RuleCode = () => {
           </div>
           <div id="tab3" className={`tab ${activeTab === "tab3" ? "active" : ""}`}>
             <div className={styles.scss_code_inner}>
-              <h3 className="guide-title">SCSS</h3>
-              <div className="contents_wrap">
-                <h4 className="sub-title">SCSS 규칙</h4>
-                <ul>
-                  <li>
-                    공통 선택자(<code className="mu-code-label">*</code>)는 웹페이지의 성능 저하를 가져오므로 사용하지 않는다.
-                  </li>
-                  <li>
-                    태그는 언제든지 다른 태그로 변경될 수 있으므로 태그 선택자로 스타일을 작성하지 않는다.
-                  </li>
-                  <li>
-                    <code className="mu-code-label">!important</code> 는 불가피한 상황을 제외하고는 사용하지 않는다.
-                  </li>
-                  <li>
-                    인라인 스타일의 우선 순위가 높으므로 인라인 스타일의 사용은 최소한으로 한다.
-                  </li>
-                  <li>
-                    선택자를 다수 작성할수록 우선 순위가 높아지므로 선택자는 가능하다면 최소 단위 / 루트 단위로 진행한다.
-                  </li>
-                  <li>
-                    클래스명이 자주 쓰이는 명칭일 경우 선택자를 하나, 두 개 정도 추가 작성한다.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className={styles.scss_code_inner}>
               <h3 className="guide-title">SCSS 규칙 예시</h3>
               <div className="contents_wrap">
                 <h4 className="sub-title">파일 구조</h4>
@@ -818,10 +976,168 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">믹스인</h4>
+                <div className="contents">
+                  <p className="text">
+                    믹스인은 중복되는 스타일을 분리하거나 복잡한 스타일을 추상화하는 역할 등을 위해 마치 함수처럼 사용해야 한다. 특히 인자가 없는 믹스인은, Gzip과 같은 압축 과정 없이는 불필요한 중복 코드를 만들어낼 수 있으므로 주의한다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{scssCode3}</code>
+                    </pre>
+                  </div>
+                </div>
+                <div className="contents">
+                  <p className="text">
+                    위 코드는 아래 코드와 같은 의미다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{scssCode4}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">Extend 지시자는 사용하지 않는다.</h4>
+                <div className="contents">
+                  <p className="text">
+                    @extend 지시자는 코드의 유지보수를 어렵게 만들 수 있으며, 직관적이지 않습니다. 믹스인을 사용하면 스타일을 더 명확하고 유연하게 관리할 수 있습니다. Gzip과 함께 사용하면 스타일시트의 크기를 줄이는 장점도 그대로 누릴 수 있습니다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{scssCode5}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">선택자 중첩은 최대 4단계까지만 사용한다.</h4>
+                <div className="contents">
+                  <p className="text">
+                    4단계를 넘으면 HTML과 너무 밀접하게 엮여있거나 재사용할 수 없는 CSS를 작성하고 있을 가능성이 크다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{scssCode6}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">선택자 중첩은 최대 4단계까지만 사용한다.</h4>
+                <div className="contents">
+                  <p className="text">
+                    4단계를 넘으면 HTML과 너무 밀접하게 엮여있거나 재사용할 수 없는 CSS를 작성하고 있을 가능성이 크다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{scssCode6}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div id="tab4" className={`tab ${activeTab === "tab4" ? "active" : ""}`}>
-            Content 3
+            <div className={styles.javascript_code_inner}>
+              <h3 className="guide-title">JavaScript 규칙</h3>
+              <div className="contents_wrap">
+                <ul className="">
+                  <li>
+                    space와 tab을 섞어서 사용하지 않는다.
+                  </li>
+                  <li>
+                    한 줄에 하나의 문장만 허용하며, 문장 종료 시에는 반드시 세미콜론(;)을 사용한다.
+                  </li>
+                  <li>
+                    카멜 케이스을 사용한다.
+                  </li>
+                  <li>
+                    (지역 변수 or private 변수)명은 '_'로 시작한다.
+                  </li>
+                  <li>
+                    URL, HTML 같은 범용적인 대문자 약어는 대문자 그대로 사용한다.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className={styles.javascript_code_inner}>
+              <h3 className="guide-title">JavaScript 규칙 예시</h3>
+              <div className="contents_wrap">
+                <h4 className="sub-title">전역 변수</h4>
+                <div className="contents">
+                  <p className="text">
+                    자바스크립트는 전역 변수에 기반을 둔다. 즉, 모든 컴파일 단위는 하나의 공용 전역 객체(window)에 로딩된다. 전역 변수는 언제든지 프로그램의 모든 부분에서 접근할 수 있기 때문에 편하지만, 바꿔 말하면 프로그램의 모든 부분에서 변경될 수 있고, 그로 인해 프로그램에 치명적인 오류를 발생시킬 수 있다.
+                  </p>
+                </div>
+                <div className="contents">
+                  <p className="text">
+                    암묵적 전역 변수를 사용하지 않는다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode1}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">선언과 할당</h4>
+                <div className="contents">
+                  <p className="text">
+                    const를 우선하여 선언하면 "이 변수는 결코 재 할당되지 않습니다"라고 알려줌으로써 코드를 읽기 쉽게 하여 유지보수에 도움이 된다. let은 블록 범위로 할당되기 때문에 다른 많은 프로그래밍 언어에서와 같은 규칙으로 적용되어 실수를 피하는데 도움이 된다.<br />
+                    var는 절대로 사용하지 않도록 한다.
+                  </p>
+                  <p className="text">
+                    const를 let 보다 위에 선언한다.
+                  </p>
+                  <p className="text">
+                    const와 let은 사용 시점에 선언 및 할당을 한다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode2}</code>
+                    </pre>
+                  </div>
+                </div>
+                <div className="contents">
+                  <p className="text">
+                    외부 모듈과 내부 모듈을 구분하여 사용한다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode3}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">배열과 객체</h4>
+                <div className="contents">
+                  <p className="text">
+                    배열 복사 시 순환문을 사용하지 않는다.
+                    복잡한 객체를 복사할 때 전개 연산자를 사용하면 좀 더 명확하게 정의할 수 있고 가독성이 좋아진다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode4}</code>
+                    </pre>
+                  </div>
+                </div>
+                <div className="contents">
+                  <p className="text">
+                    배열의 요소중 하나라도 줄 바꿈이 있다면 배열 안의 요소는 일관되게 모두 줄 바꿈을 해주어야 한다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode5}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
