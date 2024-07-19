@@ -353,11 +353,11 @@ const RuleCode = () => {
             JAVASCRIPT
           </button>
         </div>
-        <div className="tab-inner">
+        <div className="tab-contents">
           <div id="tab1" className={`tab ${activeTab === "tab1" ? "active" : ""}`}>
-            <div className={styles.html_code_wrap}>
+            <section className={styles.html_code_inner}>
               <h3 className="guide-title">HTML 규칙</h3>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">적절한 태그 및 속성 사용</h4>
                 <ul>
                   <li>
@@ -381,7 +381,7 @@ const RuleCode = () => {
                   <li>레이아웃을 표현하기 위하여 표를 사용하지 않는다.</li>
                 </ul>
               </div>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">웹접근성</h4>
                 <ul>
                   <li>
@@ -403,7 +403,7 @@ const RuleCode = () => {
                   <li>키보드 탭키 이동으로 접근이 불가능한 내용이 없어야 한다.</li>
                 </ul>
               </div>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">ID와 클래스</h4>
                 <ul>
                   <li>
@@ -430,10 +430,10 @@ const RuleCode = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className={styles.html_code_wrap}>
+            </section>
+            <section className={styles.html_code_inner}>
               <h3 className="guide-title">HTML 규칙 예시</h3>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">기본 스타일</h4>
                 <div className="contents">
                   <p className="text">
@@ -466,8 +466,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">Boolean 속성은 값을 따로 명시하지 않는다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -481,8 +480,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">불필요한 태그 작성을 피한다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -499,8 +497,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">목적에 맞는 HTML 태그를 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -519,8 +516,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">
                   CSS/자바스크립트 파일을 불러오는 경우 type을 명시하지 않는다.
                 </h4>
@@ -537,7 +533,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">CSS는 상단, 자바스크립트는 하단에서 불러온다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -552,12 +548,12 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
           <div id="tab2" className={`tab ${activeTab === "tab2" ? "active" : ""}`}>
-            <div className={styles.css_code_wrap}>
+            <div className={styles.css_code_inner}>
               <h3 className="guide-title">CSS 규칙</h3>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">선택자 및 우선순위</h4>
                 <ul className="">
                   <li>
@@ -580,7 +576,7 @@ const RuleCode = () => {
                   </li>
                 </ul>
               </div>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">주석 빈줄</h4>
                 <ul className="">
                   <li>
@@ -592,9 +588,9 @@ const RuleCode = () => {
                 </ul>
               </div>
             </div>
-            <div className={styles.css_code_wrap}>
+            <div className={styles.css_code_inner}>
               <h3 className="guide-title">CSS 규칙 예시</h3>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">기본 스타일</h4>
                 <div className="contents">
                   <p className="text">
@@ -648,8 +644,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">스타일 지정 시 아이디 대신 클래스를 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -657,8 +652,7 @@ const RuleCode = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">자바스크립트 Hook에서 스타일 지정을 위해 만들어진 클래스를 사용하지 않는다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -671,8 +665,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">숫자 0 값 이후에는 불필요한 단위를 작성하지 않는다.</h4>
                 <div className="contents">
                   <div className="spring_code_inner">
@@ -692,8 +685,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">
                   색상 표현
                 </h4>
@@ -708,7 +700,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">태그 선택자 대신 클래스 선택자를 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -731,7 +723,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">가능한 한 축약형을 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -754,7 +746,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">텍스트 숨김처리 시 아래 예시만 사용한다.</h4>
                 <div className="contents">
                   <p className="text">
@@ -771,9 +763,9 @@ const RuleCode = () => {
             </div>
           </div>
           <div id="tab3" className={`tab ${activeTab === "tab3" ? "active" : ""}`}>
-            <div className={styles.css_code_wrap}>
+            <div className={styles.scss_code_inner}>
               <h3 className="guide-title">SCSS</h3>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">SCSS 규칙</h4>
                 <ul>
                   <li>
@@ -797,9 +789,9 @@ const RuleCode = () => {
                 </ul>
               </div>
             </div>
-            <div className={styles.css_code_wrap}>
+            <div className={styles.scss_code_inner}>
               <h3 className="guide-title">SCSS 규칙 예시</h3>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">파일 구조</h4>
                 <div className="contents">
                   <p className="text">
@@ -813,7 +805,7 @@ const RuleCode = () => {
                   </div>
                 </div>
               </div>
-              <div className="contents_inner">
+              <div className="contents_wrap">
                 <h4 className="sub-title">변수명은 케밥 케이스를 사용한다.</h4>
                 <div className="contents">
                   <p className="text">

@@ -57,7 +57,7 @@ const RuleName = () => {
         </section>
         <section className={styles.name_wrap}>
           <h3 className="guide-title">class 선택자</h3>
-          <div className="contents_inner">
+          <div className="contents_wrap">
             <ul>
               <li>대표하는 프로젝트명을 축약하여 프리픽스(prefix)로 사용한다.</li>
               <li>단어의 경우 직관적으로 알아볼 수 있도록 가능한 축약하지 않는다.</li>
@@ -65,7 +65,7 @@ const RuleName = () => {
               <li>클래스 예약어는 상황에 맞게 선택적으로 참고한다.</li>
             </ul>
           </div>
-          <div className="contents_inner">
+          <div className="contents_wrap">
             <h4 className="sub-title">레이아웃</h4>
             <table>
               <thead>
@@ -104,7 +104,7 @@ const RuleName = () => {
               </tbody>
             </table>
           </div>
-          <div className="contents_inner">
+          <div className="contents_wrap">
             <h4 className="sub-title">영역</h4>
             <table>
               <thead>
@@ -137,7 +137,7 @@ const RuleName = () => {
               </tbody>
             </table>
           </div>
-          <div className="contents_inner">
+          <div className="contents_wrap">
             <h4 className="sub-title">구조</h4>
             <table>
               <thead>

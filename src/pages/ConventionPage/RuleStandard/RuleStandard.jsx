@@ -205,7 +205,7 @@ const RuleStandard = () => {
               </tbody>
             </table>
           </div>
-          <div className="contents_inner">
+          <div className="contents_wrap">
             <div className="contents">
               <h4 className="sub-title">시맨틱 태그의 이점</h4>
               <p className="text">
