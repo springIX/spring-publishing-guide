@@ -73,7 +73,7 @@ const RuleCode = () => {
     <p><strong>All recommendations</strong></p>
 
     <!-- Good -->
-    <h3 className="wrap-title">All recommendations</h3>
+    <h3 className="guide-title">All recommendations</h3>
 
     <!-- Bad -->
     Some text
@@ -325,7 +325,7 @@ const RuleCode = () => {
   
   return (
     <>
-      <section className={`${styles.code_container} spring_container`}>
+      <div className={`${styles.code_container} spring_container`}>
         <h2 className="title">퍼블리싱 코드 규칙</h2>
         <div className="tabs">
           <button
@@ -353,10 +353,10 @@ const RuleCode = () => {
             JAVASCRIPT
           </button>
         </div>
-        <div className="tab-content">
+        <div className="tab-inner">
           <div id="tab1" className={`tab ${activeTab === "tab1" ? "active" : ""}`}>
             <div className={styles.html_code_wrap}>
-              <h3 className="wrap-title">HTML 규칙</h3>
+              <h3 className="guide-title">HTML 규칙</h3>
               <div className="contents_inner">
                 <h4 className="sub-title">적절한 태그 및 속성 사용</h4>
                 <ul>
@@ -432,7 +432,7 @@ const RuleCode = () => {
               </div>
             </div>
             <div className={styles.html_code_wrap}>
-              <h3 className="wrap-title">HTML 규칙 예시</h3>
+              <h3 className="guide-title">HTML 규칙 예시</h3>
               <div className="contents_inner">
                 <h4 className="sub-title">기본 스타일</h4>
                 <div className="contents">
@@ -556,7 +556,7 @@ const RuleCode = () => {
           </div>
           <div id="tab2" className={`tab ${activeTab === "tab2" ? "active" : ""}`}>
             <div className={styles.css_code_wrap}>
-              <h3 className="wrap-title">CSS 규칙</h3>
+              <h3 className="guide-title">CSS 규칙</h3>
               <div className="contents_inner">
                 <h4 className="sub-title">선택자 및 우선순위</h4>
                 <ul className="">
@@ -593,7 +593,7 @@ const RuleCode = () => {
               </div>
             </div>
             <div className={styles.css_code_wrap}>
-              <h3 className="wrap-title">CSS 규칙 예시</h3>
+              <h3 className="guide-title">CSS 규칙 예시</h3>
               <div className="contents_inner">
                 <h4 className="sub-title">기본 스타일</h4>
                 <div className="contents">
@@ -772,7 +772,7 @@ const RuleCode = () => {
           </div>
           <div id="tab3" className={`tab ${activeTab === "tab3" ? "active" : ""}`}>
             <div className={styles.css_code_wrap}>
-              <h3 className="wrap-title">SCSS</h3>
+              <h3 className="guide-title">SCSS</h3>
               <div className="contents_inner">
                 <h4 className="sub-title">SCSS 규칙</h4>
                 <ul>
@@ -798,7 +798,7 @@ const RuleCode = () => {
               </div>
             </div>
             <div className={styles.css_code_wrap}>
-              <h3 className="wrap-title">SCSS 규칙 예시</h3>
+              <h3 className="guide-title">SCSS 규칙 예시</h3>
               <div className="contents_inner">
                 <h4 className="sub-title">파일 구조</h4>
                 <div className="contents">
@@ -832,7 +832,7 @@ const RuleCode = () => {
             Content 3
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };

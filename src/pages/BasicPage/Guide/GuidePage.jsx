@@ -4,10 +4,10 @@ import styles from "./GuidePage.module.scss";
 const GuidePage = () => {
   return (
     <>
-      <section className={`${styles.guide_container} spring_container`}>
+      <div className={`${styles.guide_container} spring_container`}>
         <h2 className="title">개발 환경 기본 가이드</h2>
-        <div className={styles.environment_wrap}>
-          <h3 className="wrap-title">프로젝트 환경</h3>
+        <section className={styles.environment_inner}>
+          <h3 className="guide-title">프로젝트 환경</h3>
           <table>
             <tbody>
               <tr>
@@ -32,9 +32,9 @@ const GuidePage = () => {
               </tr>
             </tbody>
           </table>
-        </div>
-        <div className={styles.folder_wrap}>
-          <h3 className="wrap-title">파일 / 폴더 규칙</h3>
+        </section>
+        <section className={styles.folder_inner}>
+          <h3 className="guide-title">파일 / 폴더 규칙</h3>
           <table>
             <thead>
               <tr className={styles.table_header}>
@@ -137,12 +137,12 @@ const GuidePage = () => {
               </tr>
             </tbody>
           </table>
-        </div>
-        <div className={styles.page_layout_wrap}>
-          <h3 className="wrap-title">Page Layout</h3>
+        </section>
+        <section className={styles.page_layout_inner}>
+          <h3 className="guide-title">Page Layout</h3>
           
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 };

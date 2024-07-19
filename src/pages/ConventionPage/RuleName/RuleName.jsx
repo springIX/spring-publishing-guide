@@ -4,10 +4,10 @@ import styles from './RuleName.module.scss'
 const RuleName = () => {
   return (
     <>
-      <section className={`${styles.guide_container} spring_container`}>
+      <div className={`${styles.guide_container} spring_container`}>
         <h2 className="title">퍼블리싱 네임규칙</h2>
-        <div className={styles.name_wrap}>
-          <h3 className="wrap-title">표기법</h3>
+        <section className={styles.name_inner}>
+          <h3 className="guide-title">표기법</h3>
           <table>
             <thead>
               <tr className={styles.table_header}>
@@ -44,13 +44,13 @@ const RuleName = () => {
               </tr>
             </tbody>
           </table>
-        </div>
-        <div className={styles.name_wrap}>
-          <h3 className="wrap-title">ID 선택자</h3>
+        </section>
+        <section className={styles.name_inner}>
+          <h3 className="guide-title">ID 선택자</h3>
           <p className="text">ID는 개발을 위해서만 사용하고, <br/>퍼블리싱 작업시에는 앵커 및 label 등의 연결하는 상황 등을 제외하고는 일반적으로 사용하지 않으므로 정리하여 기재하지 않는다.</p>
-        </div>
-        <div className={styles.name_wrap}>
-          <h3 className="wrap-title">class 선택자</h3>
+        </section>
+        <section className={styles.name_inner}>
+          <h3 className="guide-title">class 선택자</h3>
           <div className="contents_inner">
             <ul>
               <li>대표하는 프로젝트명을 축약하여 프리픽스(prefix)로 사용한다.</li>
@@ -239,8 +239,8 @@ const RuleName = () => {
               </tbody>
             </table>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   )
 }

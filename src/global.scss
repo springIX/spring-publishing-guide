@@ -68,12 +68,12 @@ li {
       @include res-vw(D, padding, 40px, 0);
     }
   }
-  > div {
+  > section {
     @include res-vw(M, margin-bottom, 50px);
     @include screen("desktop") {
       @include res-vw(D, margin-bottom, 100px);
     }
-    .wrap-title {
+    .guide-title {
       @include font-size(M, 20px);
       @include screen("desktop") {
         @include font-size(D, 30px);

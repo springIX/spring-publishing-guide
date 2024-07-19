@@ -37,18 +37,18 @@ const RuleStandard = () => {
   `;
   return (
     <>
-      <section className={`${styles.standard_container} spring_container`}>
+      <div className={`${styles.standard_container} spring_container`}>
         <h2 className="title">표준규칙 가이드</h2>
-        <div className={styles.standard_wrap}>
-          <h3 className="wrap-title">head 태그 가이드</h3>
+        <section className={styles.standard_inner}>
+          <h3 className="guide-title">head 태그 가이드</h3>
           <div className="spring_code_inner">
             <pre>
               <code>{codeString}</code>
             </pre>
           </div>
-        </div>
-        <div className={styles.semantic_wrap}>
-          <h3 className="wrap-title">Semantic Markup</h3>
+        </section>
+        <section className={styles.semantic_inner}>
+          <h3 className="guide-title">Semantic Markup</h3>
           <div className={styles.semantic_table_inner}>
             <table>
               <thead>
@@ -246,16 +246,16 @@ const RuleStandard = () => {
               </p>
             </div>
           </div>
-        </div>
+        </section>
         {/* <div className={styles.entity_wrap}>
-          <h3 className="wrap-title">특수기호 Entity name</h3>
+          <h3 className="guide-title">특수기호 Entity name</h3>
           <div className="desc">
               <pc className="text">
                 특수기호는 <a href="https://symbl.cc/kr/html-entities/" target="_blank">Entity name</a>을 사용하여 entity 코드로 변환한다.
               </pc>
           </div>
         </div> */}
-      </section>
+      </div>
     </>
   );
 };
