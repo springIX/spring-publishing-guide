@@ -506,6 +506,78 @@ const RuleCode = () => {
       3
     ];
   `;
+  const jsCode6 = `
+    // Bad - 함수 생성자 사용
+    const doSomething = new Function('param1', 'param2', 'return param1 + param2;');
+
+    // Good - 함수 선언식 사용
+    function doSomething(param1, param2) {
+      return param1 + param2;
+    }
+
+    // Good - 함수 표현식 사용
+    const doSomething = function(param1, param2) {
+      return param1 + param2;
+    };
+  `;
+  const jsCode7 = `
+    // Bad - 선언 이전에 사용
+    const sumedValue = sum(1, 2);
+    const sum = function(param1, param2) {
+      return param1 + param2;
+    };
+
+    // Bad - 선언 이전에 사용
+    const sumedValue = sum(1, 2);
+    function sum(param1, param2) {
+      return param1 + param2;
+    };
+
+    // Good
+    const sum = function(param1, param2) {
+      return param1 + param2;
+    };
+    const sumedValue = sum(1, 2);
+  `;
+  const jsCode8 = `
+    // Bad
+    [1, 2, 3].map(function (x) {
+      const y = x + 1;
+      return x * y;
+    });
+
+    // Good
+    [1, 2, 3].map(x => {
+      const y = x + 1;
+      return x * y;
+    });
+  `;
+  const jsCode9 = `
+    // Bad
+    [1, 2, 3].map((x) => {
+      const y = x + 1;
+      return x * y;
+    });
+
+    // Good
+    [1, 2, 3].map(x => x * x);
+
+    // Good
+    [1, 2, 3].reduce((y, x) => x + y);
+  `;
+  const jsCode10 = `
+    // Bad
+    [1, 2, 3].map((x) => {
+      const y = x + 1;
+      return x * y;
+    });
+
+    // Good
+    [1, 2, 3].map(x => x * x);
+
+    // Good
+    [1, 2, 3].reduce((y, x) => x + y);
+  `;
   
   return (
     <>
@@ -1133,6 +1205,81 @@ const RuleCode = () => {
                   <div className="spring_code_inner">
                     <pre>
                       <code>{jsCode5}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">함수</h4>
+                <div className="contents">
+                  <p className="text">
+                    함수 생성자를 사용하여 선언하지 않는다.<br />
+                    문자열로 전달되는 파라미터가 수행 시점에 eval로 처리되어 실행 속도가 느려진다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode6}</code>
+                    </pre>
+                  </div>
+                </div>
+                <div className="contents">
+                  <p className="text">
+                    함수는 사용 전에 선언해야 하며, 함수 선언문은 변수 선언문 다음에 오도록 한다.<br />
+                    함수 표현식으로 생성된 함수는 호이스팅 시 값이 할당되지 않으므로 선언 이전에 사용하면 오류가 발생한다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode7}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">화살표 함수</h4>
+                <div className="contents">
+                  <p className="text">
+                    함수 표현식 대신 화살표 함수를 사용한다.<br />
+                    화살표 함수는 별도의 this 바인딩 없이 상위 컨텍스트에 바인딩되기 때문에 함수 표현식보다 혼란이 적으며 덜 장황하고 추론이 쉽다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode8}</code>
+                    </pre>
+                  </div>
+                </div>
+                <div className="contents">
+                  <p className="text">
+                    화살표 함수의 파라미터가 하나이면 괄호를 생략한다.<br />
+                    파라미터가 하나일 때 괄호를 생략하면 화살표 함수의 장점을 살릴 수 있다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode9}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div className="contents_wrap">
+                <h4 className="sub-title">화살표 함수</h4>
+                <div className="contents">
+                  <p className="text">
+                    함수 표현식 대신 화살표 함수를 사용한다.<br />
+                    화살표 함수는 별도의 this 바인딩 없이 상위 컨텍스트에 바인딩되기 때문에 함수 표현식보다 혼란이 적으며 덜 장황하고 추론이 쉽다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode8}</code>
+                    </pre>
+                  </div>
+                </div>
+                <div className="contents">
+                  <p className="text">
+                    화살표 함수의 파라미터가 하나이면 괄호를 생략한다.<br />
+                    파라미터가 하나일 때 괄호를 생략하면 화살표 함수의 장점을 살릴 수 있다.
+                  </p>
+                  <div className="spring_code_inner">
+                    <pre>
+                      <code>{jsCode9}</code>
                     </pre>
                   </div>
                 </div>

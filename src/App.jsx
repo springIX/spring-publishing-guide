@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ScrollTop from './assets/js/ScrollTop'; // ScrollToTop import 추가
+import ScrollTop from './assets/js/ScrollTop';
 import Layout from './components/layout/Layout';
 import HomePage from './pages/HomePage';
 import AccessibilityPage from './pages/AccessibilityPage';
