@@ -690,8 +690,8 @@ const RuleCode = () => {
             <section className={styles.html_code_inner}>
               <h3 className="guide-title">HTML 규칙 예시</h3>
               <div className="contents_wrap">
-                <h4 className="sub-title">기본 스타일</h4>
                 <div className="contents">
+                  <h4 className="sub-title">기본 스타일</h4>
                   <p className="text">
                     들여쓰기는 공백(space) 2문자를 사용한다.
                   </p>

@@ -51,7 +51,7 @@ const RuleName = () => {
               <tr>
                 <td>JS 변수, 함수</td>
                 <td>카멜 표기법</td>
-                <td>넘버링 X</td>
+                <td>넘버링 O</td>
                 <td>const onClick = () =&gt; {}; , const dogs = [];</td>
               </tr>
               <tr>

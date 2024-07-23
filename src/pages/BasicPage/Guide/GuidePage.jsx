@@ -2,6 +2,64 @@ import React from "react";
 import styles from "./GuidePage.module.scss";
 
 const GuidePage = () => {
+  const codeMainLayout = `
+    <body>
+      <div class="wrap">
+        <header class="header">
+          <nav class="nav">
+            <ul class="nav_list">
+              <li class="nav_item"><a href="#" class="nav_link">Home</a></li>
+              <li class="nav_item"><a href="#" class="nav_link">About</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main class="main">
+          <section class="inner main_inner">
+            <div class="title_header">
+              <h2 class="title"></h2>
+            </div>
+            <div class="contents main_contents">
+              <div class="text_contents">
+                <span class="text"></span>
+              </div>
+              <div class="img_contents">
+                <img src="https://via.placeholder.com/150" alt="image" class="image">
+              </div>
+              <div class="btn_contents">
+                <button class="btn"></button>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <div class="footer_inner">
+          </div>
+        </footer>
+      </div>
+    </body>  
+  `;
+  const codeOtherLayout = `
+    include('./header.php')
+    <div class="container">
+      <section class="inner page_inner">
+        <div class="title_header">
+          <h2 class="title"></h2>
+        </div>
+        <div class="contents page_contents">
+          <div class="text_contents">
+            <span class="text"></span>
+          </div>
+          <div class="img_contents">
+            <img src="https://via.placeholder.com/150" alt="image" class="image">
+          </div>
+          <div class="btn_contents">
+            <button class="btn"></button>
+          </div>
+        </div>
+      </section>
+    </div>
+    include('./footer.php') 
+  `;
   return (
     <>
       <div className={`${styles.guide_container} spring_container`}>
@@ -140,7 +198,24 @@ const GuidePage = () => {
         </section>
         <section className={styles.page_layout_inner}>
           <h3 className="guide-title">Page Layout</h3>
-          
+          <div className="contents_wrap">
+            <div className="contents">
+              <h4 className="sub-title">Main Page Layout</h4>
+              <div className="spring_code_inner">
+                <pre>
+                  <code>{codeMainLayout}</code>
+                </pre>
+              </div>
+            </div>
+            <div className="contents">
+              <h4 className="sub-title">other Page Layout</h4>
+              <div className="spring_code_inner">
+                <pre>
+                  <code>{codeOtherLayout}</code>
+                </pre>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </>
