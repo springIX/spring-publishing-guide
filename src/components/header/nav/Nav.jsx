@@ -55,7 +55,7 @@ const Nav = () => {
           subLinks={[
             { link: '/accessibility/overview', text: '웹접근성 개요' },
             { link: '/accessibility/wai-aria', text: 'WAI-ARIA' },
-            { link: '/accessibility/checklist', text: '역할별 체크리스트' }
+            { link: '/accessibility/checklist', text: '접근성 교육' }
           ]}
         />
         <NavItem 
