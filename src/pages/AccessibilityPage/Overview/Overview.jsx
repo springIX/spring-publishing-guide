@@ -655,7 +655,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">37. 동일 기능 아이콘 버튼은 일관성 있게 제공</h3>
+          <h3 className="guide-title">38. 동일 기능 아이콘 버튼은 일관성 있게 제공</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img26} alt="" />
@@ -663,7 +663,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">38. 확인과 같은 요구에 의해서만 콘텐츠 문맥 변경, 드롭다운에서 확인 버튼 제공</h3>
+          <h3 className="guide-title">39. 확인과 같은 요구에 의해서만 콘텐츠 문맥 변경, 드롭다운에서 확인 버튼 제공</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img27} alt="" />
@@ -675,7 +675,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">39. 잘못 입력한 내용과 위치 알려줘야 함 - 생년월일 칸에 숫자 미입력 시 숫자만 입력 가능하다고 표시</h3>
+          <h3 className="guide-title">40. 잘못 입력한 내용과 위치 알려줘야 함 - 생년월일 칸에 숫자 미입력 시 숫자만 입력 가능하다고 표시</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img28} alt="" />
@@ -683,7 +683,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">40. 입력 시 조건 지시문 제공</h3>
+          <h3 className="guide-title">41. 입력 시 조건 지시문 제공</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img29} alt="" />
@@ -691,7 +691,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">41. 중요한 데이터 변경 시 원래대로 되돌리는 기능, 미리 오류 체크 기능, 최종 확인 기능 중 하나 이상 제공</h3>
+          <h3 className="guide-title">42. 중요한 데이터 변경 시 원래대로 되돌리는 기능, 미리 오류 체크 기능, 최종 확인 기능 중 하나 이상 제공</h3>
           <div className="contents_wrap">
             <ul>
               <li>온라인 주문 시 실수 의심 시 미리 알림, 결제 전 주문 내용 확인, 결제 후 주문 취소 기능 제공</li>
@@ -699,7 +699,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">42. 상황에 맞는 도움말 제공</h3>
+          <h3 className="guide-title">43. 상황에 맞는 도움말 제공</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img30} alt="" />
