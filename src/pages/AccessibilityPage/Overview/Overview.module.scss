@@ -1,0 +1,11 @@
+.guide_container{
+  .guide_inner{
+    img{ max-width: 100%;}
+    .col{ display: flex; align-items: flex-start; gap: 20px;
+      > div{ width: 100%;
+        img{ width: 100%;}
+      }
+    }
+    pre{ white-space: pre-wrap;}
+  }
+}
