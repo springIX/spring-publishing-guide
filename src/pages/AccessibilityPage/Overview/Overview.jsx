@@ -153,17 +153,15 @@ const Overview = () => {
     </div>
   `;
   const exampleCode13 = `
-    $('.trigger').mouseenter(function(){
-      $('.drawer').show();
+    div.addEventListener("mouseenter", (event) => {
+      document.querySelector("drawer").style.display = "block";
     }); ❌
 
-    $('.trigger').on({
-      mouseenter: function(){
-        $('.drawer').show();
-      }
-      ,mouseleave: function(){
-        $('.drawer').hide();
-      }
+    div.addEventListener("mouseenter", (event) => {
+      document.querySelector("drawer").style.display = "block";
+    });
+    div.addEventListener("mouseleave", (event) => {
+      document.querySelector("drawer").style.display = "none";
     }); ⭕
   `;
   const exampleCode14 = `
@@ -182,7 +180,7 @@ const Overview = () => {
       <div className={`${styles.guide_container} spring_container`}>
         <h2 className="title">웹접근성 개요</h2>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">01 alt txt (대체 텍스트) 제공</h3>
+          <h3 className="guide-title">01. alt txt (대체 텍스트) 제공</h3>
           <div className="contents_wrap">
             <ul>
               <li>이미지 버튼의 경우 핵심 기능에 대한 텍스트 제공</li>
@@ -193,20 +191,18 @@ const Overview = () => {
               <li>동일한 정보가 반복되지 않도록 함</li>
             </ul>
             <br/>
-            <div className={styles.col}>
-              <div className="img_box">
-                <img src={img1} alt="" />
-              </div>
-              <div className="spring_code_inner">
-                <pre>
-                  <code>{exampleCode1}</code>
-                </pre>
-              </div>
+            <div className="img_box">
+              <img src={img1} alt="" />
+            </div>
+            <div className="spring_code_inner">
+              <pre>
+                <code>{exampleCode1}</code>
+              </pre>
             </div>
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">02 멀티미디어 콘텐츠에는 자막 제공</h3>
+          <h3 className="guide-title">02. 멀티미디어 콘텐츠에는 자막 제공</h3>
           <div className="contents_wrap">
             <h4 className="sub-title">대사 없는 영상은 화면 해설 제공</h4>
             <div className="spring_code_inner">
@@ -230,11 +226,11 @@ const Overview = () => {
               </pre>
             </div>
             <br />
-            <a href="https://coding-factory.tistory.com/887#google_vignette" target="_blank">출처 - 코딩팩토리</a>
+            <a href="https://coding-factory.tistory.com/887#google_vignette" target="_blank">✔ 출처 - 코딩팩토리</a>
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">03 표는 이해하기 쉽게 제공</h3>
+          <h3 className="guide-title">03. 표는 이해하기 쉽게 제공</h3>
           <div className="contents_wrap">
             <ul>
               <li>제목 셀과 데이터 셀을 구분</li>
@@ -246,7 +242,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">04 콘텐츠는 선형 구조, 논리적인 순서로 제공</h3>
+          <h3 className="guide-title">04. 콘텐츠는 선형 구조, 논리적인 순서로 제공</h3>
           <div className="contents_wrap">
             <div className="spring_code_inner">
               <pre>
@@ -256,7 +252,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">05 지시사항은 명확하게</h3>
+          <h3 className="guide-title">05. 지시사항은 명확하게</h3>
           <div className="contents_wrap">
             <ul>
               <li>요소의 실제 명칭이나 대체 텍스트 사용</li>
@@ -268,7 +264,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">06 색상만으로 구분하지 말 것</h3>
+          <h3 className="guide-title">06. 색상만으로 구분하지 말 것</h3>
           <div className="contents_wrap">
             <ul>
               <li>차트 그래프는 동일한 명도로 구분하지 말고, 경조 모드에서도 보여야 함</li>
@@ -279,7 +275,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">07 자동 소리 재생, 깜빡임 3초 이상 금지</h3>
+          <h3 className="guide-title">07. 자동 소리 재생, 깜빡임 3초 이상 금지</h3>
           <div className="contents_wrap">
             <ul>
               <li>3초 이상 재생되면 제어 수단 제공</li>
@@ -292,7 +288,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">08 명도 대비 4.5대 1 이상 / 폰트 18pt 이상 또는 14pt 이상 굵은 폰트는 3:1까지 가능</h3>
+          <h3 className="guide-title">08. 명도 대비 4.5대 1 이상 / 폰트 18pt 이상 또는 14pt 이상 굵은 폰트는 3:1까지 가능</h3>
           <div className="contents_wrap">
             <div className={styles.col}>
               <div className="img_box">
@@ -307,7 +303,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">09 이웃한 콘텐츠는 명확하게 구분</h3>
+          <h3 className="guide-title">09. 이웃한 콘텐츠는 명확하게 구분</h3>
           <div className="contents_wrap">
             <div className={styles.col}>
               <div className="img_box">
@@ -323,7 +319,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">10 모든 기능이 키보드만으로 사용 가능</h3>
+          <h3 className="guide-title">10. 모든 기능이 키보드만으로 사용 가능</h3>
           <div className="contents_wrap">
             <div className="spring_code_inner">
               <pre>
@@ -333,7 +329,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">11 시간 제한 콘텐츠는 응답 시간 조절 가능해야 함</h3>
+          <h3 className="guide-title">11. 시간 제한 콘텐츠는 응답 시간 조절 가능해야 함</h3>
           <div className="contents_wrap">
             <ul>
               <li>시간 제한이 있을 경우 시간 연장, 로그인 화면으로 돌아가기 등 제어 가능해야 함</li>
@@ -350,7 +346,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">12 조작이 용이해야 함</h3>
+          <h3 className="guide-title">12. 조작이 용이해야 함</h3>
           <div className="contents_wrap">
             <ul>
               <li>모든 컨트롤 영역은 대각선 6.0mm 이상</li>
@@ -363,7 +359,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">13 콘텐츠 반복 영역을 건너뛸 수 있어야 하고 웹페이지 가장 앞쪽에 배치</h3>
+          <h3 className="guide-title">13. 콘텐츠 반복 영역을 건너뛸 수 있어야 하고 웹페이지 가장 앞쪽에 배치</h3>
           <div className="contents_wrap">
             <div className="spring_code_inner">
               <pre>
@@ -373,7 +369,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">14 팝업창에도 제목 필요, 특수 기호 사용 금지</h3>
+          <h3 className="guide-title">14. 팝업창에도 제목 필요, 특수 기호 사용 금지</h3>
           <div className="contents_wrap">
             <div className="spring_code_inner">
               <pre>
@@ -383,7 +379,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">15 링크 텍스트는 이동 경로를 명확하게 작성</h3>
+          <h3 className="guide-title">15. 링크 텍스트는 이동 경로를 명확하게 작성</h3>
           <div className="contents_wrap">
             <ul>
               <li>이미지 + 링크 텍스트는 이미지를 공백 문자로 제공</li>
@@ -401,7 +397,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">16 다중 포인터나 경로 기반 동작 기능은 단일 포인터 입력으로도 조작 가능해야 함</h3>
+          <h3 className="guide-title">16. 다중 포인터나 경로 기반 동작 기능은 단일 포인터 입력으로도 조작 가능해야 함</h3>
           <div className="contents_wrap">
             <ul>
               <li>예: 좌우로 드래그해야만 전환되는 슬라이드는 사용해선 안되고, 페이지네이션이나 네비게이션 등으로 단일 포인터로도 충분히 컨트롤 가능하게끔 기능보완을 해주어야 함</li>
@@ -409,7 +405,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">17 다운 이벤트 (마우스 눌림) 완료 금지, 업 이벤트 (마우스 떼기) 시 완료되어야 하며 실행 전 중지 또는 실행 후 취소 가능해야 함</h3>
+          <h3 className="guide-title">17. 다운 이벤트 (마우스 눌림) 완료 금지, 업 이벤트 (마우스 떼기) 시 완료되어야 하며 실행 전 중지 또는 실행 후 취소 가능해야 함</h3>
           <div className="contents_wrap">
             <ul>
               <li>예: 클릭 실수 시 다른 곳에서 업 이벤트로 실행 취소</li>
@@ -423,7 +419,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">18 손동작을 이용한 기능들은 인터페이스에서 조작 가능해야 하며, 해당 기능을 비활성화 가능해야 함</h3>
+          <h3 className="guide-title">18. 손동작을 이용한 기능들은 인터페이스에서 조작 가능해야 하며, 해당 기능을 비활성화 가능해야 함</h3>
           <div className="contents_wrap">
             <ul>
               <li>예: 카메라 어플에서 특정 손짓을 하면 자동으로 촬영이 되는 기능이 있다. 이 기능은 비활성화가 가능해야 함.  </li>
@@ -431,7 +427,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">19 의도치 않은 기능 실행 금지</h3>
+          <h3 className="guide-title">19. 의도치 않은 기능 실행 금지</h3>
           <div className="contents_wrap">
             <ul>
               <li>온라인 서식 자동 제출</li>
@@ -443,7 +439,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">20 도움 정보는 동일한 순서로 제공, 모든 페이지에 챗봇 같은 내용은 동일한 위치에 제공</h3>
+          <h3 className="guide-title">20. 도움 정보는 동일한 순서로 제공, 모든 페이지에 챗봇 같은 내용은 동일한 위치에 제공</h3>
           <div className="contents_wrap">
             <ul>
               <li>입력 오류 시 누락 또는 틀린 내용 알려줘야 함</li>
@@ -455,7 +451,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">21 인증 시 인지 기능 테스트(비밀번호 입력, 패턴 인식 등)에 의존하지 않고 공개 인증, 생체 인증, 물건 인증 등 한 가지 이상 제공</h3>
+          <h3 className="guide-title">21. 인증 시 인지 기능 테스트(비밀번호 입력, 패턴 인식 등)에 의존하지 않고 공개 인증, 생체 인증, 물건 인증 등 한 가지 이상 제공</h3>
           <div className="contents_wrap">
             <ul>
               <li></li>
@@ -474,11 +470,11 @@ const Overview = () => {
                 <p>→ 지문인식 잠금도 추가해야함.</p>
               </div>
             </div>
-            <p className="text">이미지 출처 - 삼성전자서비스</p>
+            <p className="text">✔ 이미지 출처 - 삼성전자서비스</p>
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">22 이미 입력한 정보는 자동 채우기 또는 선택 입력 가능, 비밀번호 등 재입력 필수 항목 제외</h3>
+          <h3 className="guide-title">22. 이미 입력한 정보는 자동 채우기 또는 선택 입력 가능, 비밀번호 등 재입력 필수 항목 제외</h3>
           <div className="contents_wrap">
             <div className="spring_code_inner">
               <pre>
@@ -488,7 +484,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">23 필수 입력 부분 명확히 표시, 필수 항목과 선택 항목 분리 방법 제시</h3>
+          <h3 className="guide-title">23. 필수 입력 부분 명확히 표시, 필수 항목과 선택 항목 분리 방법 제시</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img3} alt="" />
@@ -496,7 +492,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">24 브라우저 확대 시 글자 잘림 금지, 200%~400% 확대 가능, 가로 또는 세로 스크롤 중 하나만 가능</h3>
+          <h3 className="guide-title">24. 브라우저 확대 시 글자 잘림 금지, 200%~400% 확대 가능, 가로 또는 세로 스크롤 중 하나만 가능</h3>
           <div className="contents_wrap">
             <ul>
               <li>너비 1,280 픽셀 해상도 모니터에서 400%까지 확대할 수 있다. 모바일 단말에서는 테스트하지 않는다.</li>
@@ -505,7 +501,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">25 이미지위에 있는 텍스트는 이미지와 합치지 않고, 따로 작성한다.</h3>
+          <h3 className="guide-title">25. 이미지위에 있는 텍스트는 이미지와 합치지 않고, 따로 작성한다.</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img15} alt="" />
@@ -521,9 +517,9 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">26 한 줄 80자 (한글 40자) 이하 작성 - 줄 간격 1.5 / 단락 줄 1.5배 간격 제공, 가로 스크롤 없이 글자 2배 확대 가능</h3>
+          <h3 className="guide-title">26. 한 줄 80자 (한글 40자) 이하 작성 - 줄 간격 1.5 / 단락 줄 1.5배 간격 제공, 가로 스크롤 없이 글자 2배 확대 가능</h3>
           <div className="contents_wrap">
-            <div className={styles.col}>
+            <div className={styles.col} style={{border: '3px solid #000', borderRadius: '10px', overflow: 'hidden'}}>
               <div className="img_box">
                 <img src={img16} alt="" />
               </div>
@@ -535,7 +531,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">27 사용자 인터페이스나 그래픽 콘텐츠에 3:1 이상 명도 대비 제공 (사용 불가 표시 인터페이스 제외)</h3>
+          <h3 className="guide-title">27. 사용자 인터페이스나 그래픽 콘텐츠에 3:1 이상 명도 대비 제공 (사용 불가 표시 인터페이스 제외)</h3>
           <div className="contents_wrap">
             <ul>
               <li>콘텐츠와 배경 색의 명도 대비가 3:1까지 허용되는 경우는 다음과 같습니다.<br />
@@ -546,7 +542,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">28 마우스 호버 콘텐츠는 닫기 가능해야 하고 호버 중 사라지면 안 됨</h3>
+          <h3 className="guide-title">28. 마우스 호버 콘텐츠는 닫기 가능해야 하고 호버 중 사라지면 안 됨</h3>
           <div className="contents_wrap">
             <div className="spring_code_inner">
               <pre>
@@ -556,7 +552,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">29 모든 기능 키보드만으로 사용 가능 - 드래그드롭 포함</h3>
+          <h3 className="guide-title">29. 모든 기능 키보드만으로 사용 가능 - 드래그드롭 포함</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img18} alt="" />
@@ -565,7 +561,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">30 인증 세션 만료 시 재인증 후 기존 작업 계속 가능해야 함</h3>
+          <h3 className="guide-title">30. 인증 세션 만료 시 재인증 후 기존 작업 계속 가능해야 함</h3>
           <div className="contents_wrap">
             <ul>
               <li>글쓰기 중단 시 로그인 후 기존 작성글 유지</li>
@@ -573,7 +569,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">31 상호작용 애니메이션은 의미 전달이 아니면 비활성화 가능</h3>
+          <h3 className="guide-title">31. 상호작용 애니메이션은 의미 전달이 아니면 비활성화 가능</h3>
           <div className="contents_wrap">
             <div className="spring_code_inner">
               <pre>
@@ -589,36 +585,37 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">32 콘텐츠 위치를 찾는 다양한 방법 제공 - 대메뉴, 검색, 사이트맵 등</h3>
+          <h3 className="guide-title">32. 콘텐츠 위치를 찾는 다양한 방법 제공 - 대메뉴, 검색, 사이트맵 등</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img19} alt="" />
-              <p>→ 대메뉴 (출처 - LG전자)</p>
+              <p>→ 대메뉴</p>
             </div>
             <br />
             <div className="img_box">
               <img src={img20} alt="" />
-              <p>→ 전체메뉴 (출처 - LG전자)</p>
+              <p>→ 전체메뉴</p>
             </div>
             <br />
             <div className="img_box">
               <img src={img21} alt="" />
-              <p>→ 사이트맵 (출처 - LG전자)</p>
+              <p>→ 사이트맵</p>
             </div>
+            <p className="text">✔ 출처 - LG전자</p>
             
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">33 기사 제목은 기사 내용을 충분히 대표해야 함</h3>
+          <h3 className="guide-title">33. 기사 제목은 기사 내용을 충분히 대표해야 함</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img22} alt="" />
-              <p>→ 기사제목만으로도 기사 내용을 유추 가능해야 합니다. (출처 - 네이버)</p>
+              <p>→ 기사제목만으로도 기사 내용을 유추 가능해야 합니다. <br />✔ 출처 - 네이버</p>
             </div>
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">34 터치 기반은 44x44 픽셀 이상이어야 함</h3>
+          <h3 className="guide-title">34. 터치 기반은 44x44 픽셀 이상이어야 함</h3>
           <div className="contents_wrap">
             <ul>
               <li>버튼의 경우 웹접근성 지침(WCAG)에 따르면 타겟의 크기는 최소 44 x 44px 이상이어야 한다.<br />(사용성을 고려하여 터치 영역을 넓게 잡으면 클릭하기 수월해 진다.)</li>
@@ -626,7 +623,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">35 어려운 용어, 약어 사용 지양, 설명 제공</h3>
+          <h3 className="guide-title">35. 어려운 용어, 약어 사용 지양, 설명 제공</h3>
           <div className="contents_wrap">
             <ul>
               <li>어려운 용어, 약어를 사용할 시 이용자가 해석하지 못할 수 있으니, 보편적으로 쉽게 쓰이는 대체어를 사용하거나 설명을 따로 보충한다.</li>
@@ -634,7 +631,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">36 입력 양식 자동 제출 금지, 확인 버튼 등으로 제출 의도 명확히 해야 함</h3>
+          <h3 className="guide-title">36. 입력 양식 자동 제출 금지, 확인 버튼 등으로 제출 의도 명확히 해야 함</h3>
           <div className="contents_wrap">
             <div className={styles.col}>
               <div className="img_box">
@@ -650,7 +647,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">37 내비게이션 순서와 콘텐츠 구성 순서 동일하게</h3>
+          <h3 className="guide-title">37. 내비게이션 순서와 콘텐츠 구성 순서 동일하게</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img25} alt="" style={{filter: 'brightness(0.9)'}} />
@@ -658,7 +655,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">37 동일 기능 아이콘 버튼은 일관성 있게 제공</h3>
+          <h3 className="guide-title">38. 동일 기능 아이콘 버튼은 일관성 있게 제공</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img26} alt="" />
@@ -666,7 +663,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">38 확인과 같은 요구에 의해서만 콘텐츠 문맥 변경, 드롭다운에서 확인 버튼 제공</h3>
+          <h3 className="guide-title">39. 확인과 같은 요구에 의해서만 콘텐츠 문맥 변경, 드롭다운에서 확인 버튼 제공</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img27} alt="" />
@@ -678,7 +675,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">39 잘못 입력한 내용과 위치 알려줘야 함 - 생년월일 칸에 숫자 미입력 시 숫자만 입력 가능하다고 표시</h3>
+          <h3 className="guide-title">40. 잘못 입력한 내용과 위치 알려줘야 함 - 생년월일 칸에 숫자 미입력 시 숫자만 입력 가능하다고 표시</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img28} alt="" />
@@ -686,7 +683,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">40 입력 시 조건 지시문 제공</h3>
+          <h3 className="guide-title">41. 입력 시 조건 지시문 제공</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img29} alt="" />
@@ -694,7 +691,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">41 중요한 데이터 변경 시 원래대로 되돌리는 기능, 미리 오류 체크 기능, 최종 확인 기능 중 하나 이상 제공</h3>
+          <h3 className="guide-title">42. 중요한 데이터 변경 시 원래대로 되돌리는 기능, 미리 오류 체크 기능, 최종 확인 기능 중 하나 이상 제공</h3>
           <div className="contents_wrap">
             <ul>
               <li>온라인 주문 시 실수 의심 시 미리 알림, 결제 전 주문 내용 확인, 결제 후 주문 취소 기능 제공</li>
@@ -702,7 +699,7 @@ const Overview = () => {
           </div>
         </section>
         <section className={styles.guide_inner}>
-          <h3 className="guide-title">42 상황에 맞는 도움말 제공</h3>
+          <h3 className="guide-title">43. 상황에 맞는 도움말 제공</h3>
           <div className="contents_wrap">
             <div className="img_box">
               <img src={img30} alt="" />
