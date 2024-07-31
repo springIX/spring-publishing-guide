@@ -134,17 +134,17 @@ const GuidePage = () => {
                 <td>스타일 - 리셋</td>
               </tr>
               <tr>
-                <td>_common.scss</td>
-                <td>스타일 - 공통 영역</td>
-              </tr>
-              <tr>
                 <td>_layout.scss</td>
                 <td>스타일 - 레이아웃</td>
               </tr>
               <tr>
-                <td>components</td>
                 <td>페이지네임.scss</td>
                 <td>스타일 - 개별 영역</td>
+              </tr>
+              <tr>
+                <td>components</td>
+                <td>_common.scss</td>
+                <td>스타일 - 공통 영역</td>
               </tr>
               <tr>
                 <td rowspan="2">SCSS</td>
