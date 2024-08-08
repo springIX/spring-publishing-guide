@@ -56,9 +56,9 @@ const RuleName = () => {
               </tr>
               <tr>
                 <td>Image</td>
-                <td>케밥 표기법</td>
+                <td>스네이크 표기법</td>
                 <td>두 자리수 (01, 02, 03)</td>
-                <td>button-icon01.svg, button-icon02.svg</td>
+                <td>button_icon01.svg, button_icon02.svg</td>
               </tr>
               <tr>
                 <td>파일 및 폴더</td>
